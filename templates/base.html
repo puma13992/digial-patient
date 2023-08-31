@@ -2,152 +2,84 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Store the most important information online in case of an emergency."
-    />
-    <meta name="keywords" content="patient, doctor, emergency, resuscitate" />
-    <meta name="author" content="Sarah Topfstädt" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Store the most important information online in case of an emergency.">
+    <meta name="keywords" content="patient, doctor, emergency, resuscitate">
+    <meta name="author" content="Sarah Topfstädt">
 
     <!--CSS-->
-    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <!--Favicons-->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/static/media/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/static/media/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/static/media/favicon/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/media/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/media/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/media/favicon/favicon.ico" />
+    <link rel="manifest" href="/static/media/favicon/site.webmanifest">
 
     <!--Bootstrap 5.3.1 with icons-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!--Title-->
     {% block title %}
     <!-- Title goes here -->
     {% endblock %}
-  </head>
-
-  <body>
+</head>
+<body>
     <header>
-      <!--Navbar-->
-      <nav class="navbar navbar-expand-md bg-body-secondary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'home' %}">
-            <img
-              class="logo"
-              src="/static/media/img/logo.webp"
-              alt="Logo patient doctor"
-              onerror="this.onerror=null;this.src='./static/media/img/logo.png';"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="container collapse navbar-collapse ms-lg-5 ps-lg-5"
-            id="navbarText"
-          >
-            <ul class="navbar-nav fw-semibold">
-              {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a
-                  class="nav-link link-body-emphasis"
-                  href="{% url 'account_logout' %}"
-                  ><i class="bi bi-box-arrow-left"></i> Logout</a
-                >
-              </li>
-              {% else %}
-              <li class="nav-item">
-                <a
-                  class="nav-link link-body-emphasis"
-                  href="{% url 'account_signup' %}"
-                  ><i class="bi bi-pencil-square"></i> Register</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link link-body-emphasis"
-                  href="{% url 'account_login' %}"
-                  ><i class="bi bi-box-arrow-in-right"></i> Login</a
-                >
-              </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-md bg-body-secondary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'home' %}">
+                <img class="logo" src="/static/media/img/logo.webp" alt="Logo patient doctor" onerror="this.onerror=null;this.src='./static/media/img/logo.png';">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="container collapse navbar-collapse ms-lg-5 ps-lg-5" id="navbarText">
+                <ul class="navbar-nav fw-semibold ">
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                      <a class="nav-link link-body-emphasis" href="{% url 'account_logout' %}"><i class="bi bi-box-arrow-left"></i> Logout</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link link-body-emphasis" href="{% url 'account_signup' %}"><i class="bi bi-pencil-square"></i> Register</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link link-body-emphasis" href="{% url 'account_login' %}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
-
+    
     <main>
-      {% block content %}
-      <!-- Content Goes here -->
-      {% endblock content %}
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
     </main>
 
     <!--Footer-->
     <footer class="container-fluid start-0 bg-body-secondary pt-3">
-      <div class="row p-1 text-center">
-        <p class="fst-italic fs-6 dark-text">
-          © 2023 Sarah Topfstädt |
-          <a
-            href="https://codeinstitute.net/"
-            aria-label="Go to the website Code Institute (opens in new tab)"
-            target="_blank"
-            >Code Institute</a
-          >
-          Project
-        </p>
-      </div>
+        <div class="row p-1 text-center">
+            <p class="fst-italic fs-6 dark-text">© 2023 Sarah Topfstädt | <a href="https://codeinstitute.net/" aria-label="Go to the website Code Institute (opens in new tab)" target="_blank">Code Institute</a> Project</p>
+        </div>
     </footer>
 
     <!--Bootstrap 5.3.1 JS Bundle-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
     <!--jQuery-->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
     <!--JavaScript Main Script-->
     <script src="assets/js/main.js"></script>
-  </body>
+
+</body>
 </html>
