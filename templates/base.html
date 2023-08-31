@@ -78,16 +78,30 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav fw-semibold ps-3">
+              {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link link-body-emphasis" href="#"
+                <a
+                  class="nav-link link-body-emphasis"
+                  href="{% url 'account_logout' %}"
+                  ><i class="bi bi-box-arrow-left"></i> Logout</a
+                >
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a
+                  class="nav-link link-body-emphasis"
+                  href="{% url 'account_signup' %}"
                   ><i class="bi bi-pencil-square"></i> Register</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link link-body-emphasis" href="#"
+                <a
+                  class="nav-link link-body-emphasis"
+                  href="{% url 'account_login' %}"
                   ><i class="bi bi-box-arrow-in-right"></i> Login</a
                 >
               </li>
+              {% endif %}
             </ul>
           </div>
         </div>
