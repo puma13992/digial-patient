@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-puma13992-digital-patien-sztlu7niji.us2.codeanyapp.com',
-                 'digital-patient-807175a8312b.herokuapp.com', 'localhost']
+                 'digital-patient-807175a8312b.herokuapp.com', '8000-puma13992-digitalpatien-kw77quc8gbx.ws-eu104.gitpod.io', 'localhost']
 
 
 # Application definition
