@@ -35,11 +35,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-puma13992-digital-patien-sztlu7niji.us2.codeanyapp.com',
-                 'digital-patient-807175a8312b.herokuapp.com', '8000-puma13992-digitalpatien-kw77quc8gbx.ws-eu104.gitpod.io', 'localhost']
+                 'digital-patient-807175a8312b.herokuapp.com', 
+                 '8000-puma13992-digitalpatien-kw77quc8gbx.ws-eu104.gitpod.io', 'localhost']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,12 +47,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+
+    # Allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    # Other 3rd party
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+
+    # Apps
     'patientapp',
 ]
 
@@ -61,6 +67,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+# Messages
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
     messages.INFO: 'alert-info',
