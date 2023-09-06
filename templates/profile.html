@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Personal patient dossier</title>
+{% endblock %}
+
+{% block content %}
+
+  <!--Welcome-->
+  <section class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h1 class="fw-semibold text-emphasis">
+            Welcome to your electronic patient dossier
+        </h1>
+        <p class="my-3">
+            In this digital electronic patient dossier, you can store your personal data 
+            - including a no-reanimation declaration - as well as your specialist or general practitioner, 
+            medication intake, previous illnesses and contacts who should be contacted in acase of an emergency. 
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!--Cards-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 card-group mt-4">
+                <div class="card">
+                    <div class="card-header h5 bg-body-secondary">
+                        Edit personal data
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Edit your personal data, like your pre-existing diseases and medications.
+                            You can also enter your no-reanimation declaration here.
+                        </p>
+                    </div>
+                    <div class="d-grid gap-2 card-footer bg-transparent border border-0">
+                        <a href="#" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 card-group mt-4">
+                <div class="card">
+                    <div class="card-header h5 bg-body-secondary">
+                        Edit doctors
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add, change or delete your doctors here.
+                        </p>
+                    </div>
+                    <div class="d-grid gap-2 card-footer bg-transparent border border-0 align-bottom">
+                        <a href="#" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 card-group mt-4">
+                <div class="card">
+                    <div class="card-header h5 bg-body-secondary">
+                        Edit contacts
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Add, change or delete your contacts here.
+                        </p>
+                    </div>  
+                    <div class="card-footer d-grid gap-2 bg-transparent border border-0 bottom-0">
+                        <a href="#" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Settings-->
+    <div class="container my-5 pb-5">
+        <div class="row">
+            <h4>
+                Settings
+            </h4>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 card mt-2">
+            <a class="btn btn-primary" href="#" role="button">Share information in emergencies</a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 card mt-2">
+            <a class="btn btn-primary" href="#" role="button">Delete account</a>
+        </div>
+    </div>
+
+{%endblock%}
