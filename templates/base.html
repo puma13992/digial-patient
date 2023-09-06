@@ -31,20 +31,24 @@
 <body>
     <header>
         <!--Navbar-->
-        <nav class="navbar navbar-expand-md bg-body-secondary">
-            <div class="container-fluid">
-              <a class="navbar-brand ps-lg-2" href="{% url 'home' %}">
+        <div class="container-fluid bg-body-secondary">
+          <nav class="navbar navbar-expand-md bg-body-secondary">
+            <div class="container">
+              <a class="navbar-brand" href="{% url 'home' %}">
                 <img class="logo" src="{% static 'media/img/logo.webp' %}" alt="Logo patient doctor">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="container collapse navbar-collapse ms-lg-2 ps-lg-2" id="navbarText">
+              <div class="container collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav fw-semibold ">
                   {% if user.is_authenticated %}
                   <li class="nav-item">
                       <a class="nav-link link-body-emphasis" href="{% url 'account_logout' %}"><i class="bi bi-box-arrow-left"></i> Logout</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-body-emphasis" href="{% url 'profile' %}"><i class="bi bi-person-circle"></i> Profile</a>
+                </li>
                   {% else %}
                   <li class="nav-item">
                       <a class="nav-link link-body-emphasis" href="{% url 'account_signup' %}"><i class="bi bi-pencil-square"></i> Register</a>
@@ -57,7 +61,8 @@
               </div>
             </div>
           </nav>
-
+        </div>
+        
           <!--Code from I think therefore I blog-->
           <div class="container">
             <div class="row">
