@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Edit personal data</title>
+{% endblock %}
+
+{% block content %}
+
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h1 class="fw-semibold text-emphasis">Personal data</h1>
+                <h2 class="my-3">Personal</h2>
+            </div>
+            <div class="row pb-5 mb-5">
+                <div class="col">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="row">
+                            <div class="col-6 d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                            </div>
+                            <div class="col-6 d-grid gap-2">
+                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cancelModal">
+                                    Cancel
+                                </button>
+                            </div>    
+                        </div>
+                    </form>                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancel Modal -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Are you sure you want to cancel the edit?
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'personal_data' %}" class="btn btn-primary" role="button">Yes, I`m sure.</a>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">No, I want to edit my data.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
