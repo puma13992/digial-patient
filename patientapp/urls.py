@@ -13,6 +13,7 @@ urlpatterns = [
     path('doctor/edit/<int:entry_id>/', views.edit_doctor, name='edit_doctor'),
     path('doctor/delete/<int:entry_id>/', views.delete_doctor, name='delete_doctor'),
     path('contact/', views.contact, name='contact'),
+    path('contact/edit/<int:entry_id>/', views.edit_contact, name='edit_contact'),
 ]
 
 handler404 = 'patientapp.views.custom_404'
