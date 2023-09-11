@@ -135,6 +135,17 @@ def edit_doctor(request, entry_id):
     return render(request, 'edit_doctor.html', {'form': form, 'entry': entry})
 
 
+def delete_doctor(request, entry_id):
+    entry = get_object_or_404(Doctor, id=entry_id)
+
+    if request.method == 'POST':
+        entry.delete()
+        messages.success(request, 'Your entry has been successfully deleted.')
+        return redirect('doctor')
+
+    return render(request, 'delete_doctor.html', {'entry': entry})
+
+
 # custom 404 view
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
