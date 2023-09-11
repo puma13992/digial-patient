@@ -83,3 +83,14 @@ def edit_medidis(request, entry_id):
         form = MedicationListForm(instance=entry)
 
     return render(request, 'edit_medidis.html', {'form': form, 'entry': entry})
+
+
+def delete_medidis(request, entry_id):
+    entry = get_object_or_404(MediDisList, id=entry_id)
+
+    if request.method == 'POST':
+        entry.delete()
+        messages.success(request, 'Your entry has been successfully deleted.')
+        return redirect('medidis')
+
+    return render(request, 'delete_medidis.html', {'entry': entry})
