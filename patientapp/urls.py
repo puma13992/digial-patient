@@ -10,3 +10,5 @@ urlpatterns = [
     path('medidis/edit/<int:entry_id>/', views.edit_medidis, name='edit_medidis'),
     path('medidis/delete/<int:entry_id>/', views.delete_medidis, name='delete_medidis'),
 ]
+
+handler404 = 'pp4.views.custom_404'
