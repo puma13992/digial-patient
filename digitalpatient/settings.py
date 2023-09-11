@@ -34,9 +34,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-puma13992-digital-patien-sztlu7niji.us2.codeanyapp.com',
-                 'digital-patient-807175a8312b.herokuapp.com', 
-                 '8000-puma13992-digitalpatien-kw77quc8gbx.ws-eu104.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['8000-puma13992-digitalpatien-0kc40w9qan0.ws-eu104.gitpod.io',
+                 'digital-patient-807175a8312b.herokuapp.com', 'localhost']
 
 
 # Application definition
