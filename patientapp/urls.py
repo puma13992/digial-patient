@@ -11,6 +11,7 @@ urlpatterns = [
     path('medidis/delete/<int:entry_id>/', views.delete_medidis, name='delete_medidis'),
     path('doctor/', views.doctor, name='doctor'),
     path('doctor/edit/<int:entry_id>/', views.edit_doctor, name='edit_doctor'),
+    path('doctor/delete/<int:entry_id>/', views.delete_doctor, name='delete_doctor'),
 ]
 
 handler404 = 'patientapp.views.custom_404'
