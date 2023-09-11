@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import UserProfile, MediDisList
-from .forms import PersonalDataForm, MedicationListForm
+from .models import UserProfile, MediDisList, Doctor
+from .forms import PersonalDataForm, MedicationListForm, DoctorForm
 
 
 def home(request):
@@ -94,6 +94,30 @@ def delete_medidis(request, entry_id):
         return redirect('medidis')
 
     return render(request, 'delete_medidis.html', {'entry': entry})
+
+
+def doctor(request):
+    if request.user.is_authenticated:
+        user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
+        if request.method == 'POST':
+            form = DoctorForm(request.POST)
+            if form.is_valid():
+                doctor_entry = form.save(commit=False)
+                doctor_entry.user_profile = user_profile
+                doctor_entry.save()
+                messages.success(request, 'Your list has been successfully updated.')
+                return redirect('doctor')
+        else:
+            form = DoctorForm()
+
+        doctor_entries = Doctor.objects.filter(user_profile=user_profile)
+
+        return render(request, 'doctor.html', {'form': form, 'user_profile': user_profile, 'doctor_entries': doctor_entries})
+
+    else:
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 # custom 404 view
