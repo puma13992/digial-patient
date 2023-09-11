@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Medication/Diseases</title>
+{% endblock %}
+
+{% block content %}
+
+  <!--Pre-existing diseases and medications - add-->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col">
+        <h2 class="my-3">
+          Pre-existing diseases and medications
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-3">
+        <form method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button type="submit" class="col-12 d-grid gap-2 btn btn-primary">Add</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!--List medications & diseases-->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="my-3">
+          Entries
+        </h3>
+      </div>
+    </div>
+    <div class="row pb-5 mb-5">
+      {% for medication_entry in medication_entries %}
+      <div class="col-lg-4 col-md-3 col-sm-12 card-group mt-4">
+        <div class="card">
+          <div class="card-header h5 bg-body-secondary">
+            <b>Medication/Disease:</b> {{ medication_entry.medication_or_disease_name }}
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>Instructions:</b> {{ medication_entry.instructions }}
+            </p>
+          </div>
+          <div class="d-grid gap-2 card-footer bg-transparent border border-0">
+            <a href="{% if medication_entry.id %}{% url 'edit_medidis' medication_entry.id %}{% endif %}" role="button" class="btn btn-outline-primary">Edit</a>
+            <a href="{% url 'delete_medidis' medication_entry.id %}" role="button" class="btn btn-outline-primary">Delete</a>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+        <p class="fw-bold">No medication entries available.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+{%endblock%}
