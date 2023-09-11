@@ -18,3 +18,9 @@ class MedicationListForm(forms.ModelForm):
     class Meta:
         model = MediDisList
         fields = ['medication_or_disease_name', 'instructions']
+
+
+class DoctorForm(forms.ModelForm):
+    class Meta:
+        model = Doctor
+        fields = ['doctor_name', 'details']
