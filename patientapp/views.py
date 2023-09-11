@@ -94,3 +94,8 @@ def delete_medidis(request, entry_id):
         return redirect('medidis')
 
     return render(request, 'delete_medidis.html', {'entry': entry})
+
+
+# custom 404 view
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
