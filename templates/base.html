@@ -54,8 +54,8 @@
                     <li><a class="dropdown-item" href="{% url 'profile' %}">Overview</a></li>
                     <li><a class="dropdown-item" href="{% url 'personal_data' %}">Personal data</a></li>
                     <li><a class="dropdown-item" href="{% url 'medidis' %}">Medication/Diseases</a></li>
-                    <li><a class="dropdown-item" href="#">Doctors</a></li>
-                    <li><a class="dropdown-item" href="#">Contacts</a></li>
+                    <li><a class="dropdown-item" href="{% url 'doctor' %}">Doctors</a></li>
+                    <li><a class="dropdown-item" href="{% url 'contact' %}">Contacts</a></li>
                   </ul>
                 </li>
               {% else %}
