@@ -170,6 +170,21 @@ def contact(request):
         return redirect('../accounts/login/')
 
 
+def edit_contact(request, entry_id):
+    entry = get_object_or_404(Contact, id=entry_id)
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST, instance=entry)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your list has been successfully updated.')
+            return redirect('contact')
+    else:
+        form = ContactForm(instance=entry)
+
+    return render(request, 'edit_contact.html', {'form': form, 'entry': entry})
+
+
 # custom 404 view
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
