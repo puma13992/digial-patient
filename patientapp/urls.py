@@ -11,4 +11,4 @@ urlpatterns = [
     path('medidis/delete/<int:entry_id>/', views.delete_medidis, name='delete_medidis'),
 ]
 
-handler404 = 'pp4.views.custom_404'
+handler404 = 'digitalpatient.views.custom_404'
