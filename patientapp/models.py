@@ -35,3 +35,13 @@ class Doctor(models.Model):
     def __str__(self):
         return self.user_profile.user.username
 
+
+# Contact
+class Contact(models.Model):
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    contact_name = models.CharField(max_length=200, null=True)
+    details = models.CharField(max_length=200, null=True, blank=True)
+
+
+    def __str__(self):
+        return self.user_profile.user.username
