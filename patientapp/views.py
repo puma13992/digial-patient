@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import UserProfile
-from .forms import PersonalDataForm
+from .models import UserProfile, MediDisList
+from .forms import PersonalDataForm, MedicationListForm
 
 
 def home(request):
@@ -39,7 +39,32 @@ def edit_personal_data(request):
 def view_personal_data(request):
     if request.user.is_authenticated:
         user_profile, created = UserProfile.objects.get_or_create(user=request.user)
-        return render(request, 'personal_data.html', {'user_profile': user_profile})  
+        return render(request, 'personal_data.html', {'user_profile': user_profile})
+
+    else:
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
+
+
+def medidis(request):
+    if request.user.is_authenticated:
+        user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
+        if request.method == 'POST':
+            form = MedicationListForm(request.POST)
+            if form.is_valid():
+                medication_entry = form.save(commit=False)
+                medication_entry.user_profile = user_profile
+                medication_entry.save()
+                messages.success(request, 'Your list has been successfully updated.')
+                return redirect('medidis')
+        else:
+            form = MedicationListForm()
+
+        medication_entries = MediDisList.objects.filter(user_profile=user_profile)
+
+        return render(request, 'medidis.html', {'form': form, 'user_profile': user_profile, 'medication_entries': medication_entries})
+
     else:
         messages.error(request, 'You have to be logged in to show this page.')
         return redirect('../accounts/login/')
