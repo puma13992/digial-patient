@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile, MediDisList
+from .models import UserProfile, MediDisList, Doctor
 
 class PersonalDataForm(forms.ModelForm):
     class Meta:
