@@ -12,3 +12,14 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+# Medications, diseases
+class MediDisList(models.Model):
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    medication_or_disease_name = models.CharField(max_length=200, null=True)
+    instructions = models.CharField(max_length=200, null=True, blank=True)
+
+
+    def __str__(self):
+        return self.user_profile.user.username
