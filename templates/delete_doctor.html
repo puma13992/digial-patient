@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Delete Doctor</title>
+{% endblock %}
+
+{% block content %}
+
+    <!--Delete Doctor-->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="my-3">Delete Doctor</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-3">
+                <div class="card">
+                  <div class="card-header h5 bg-body-secondary">
+                    {{ entry.doctor_name }}
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">
+                      {{ entry.details }}
+                    </p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 mt-2">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Delete</button>   
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-sm-12 d-grid gap-2 mt-2">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cancelModal">
+                    Cancel
+                </button>
+            </div>    
+        </div>
+    </section>
+
+    <!-- Cancel Modal -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Are you sure you want to cancel the delete?
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'doctor' %}" class="btn btn-primary" role="button">Yes, I`m sure.</a>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">No, I want to delete my data.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
