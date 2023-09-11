@@ -68,3 +68,18 @@ def medidis(request):
     else:
         messages.error(request, 'You have to be logged in to show this page.')
         return redirect('../accounts/login/')
+
+
+def edit_medidis(request, entry_id):
+    entry = get_object_or_404(MediDisList, id=entry_id)
+
+    if request.method == 'POST':
+        form = MedicationListForm(request.POST, instance=entry)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your list has been successfully updated.')
+            return redirect('medidis')
+    else:
+        form = MedicationListForm(instance=entry)
+
+    return render(request, 'edit_medidis.html', {'form': form, 'entry': entry})
