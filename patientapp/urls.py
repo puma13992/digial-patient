@@ -7,4 +7,5 @@ urlpatterns = [
     path('edit_personal_data/', views.edit_personal_data, name='edit_personal_data'),
     path('personal_data/', views.view_personal_data, name='personal_data'),
     path('medidis/', views.medidis, name='medidis'),
+    path('medidis/edit/<int:entry_id>/', views.edit_medidis, name='edit_medidis'),
 ]
