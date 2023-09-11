@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile, MediDisList, Doctor
+from .models import UserProfile, MediDisList, Doctor, Contact
 
 class PersonalDataForm(forms.ModelForm):
     class Meta:
@@ -24,3 +24,9 @@ class DoctorForm(forms.ModelForm):
     class Meta:
         model = Doctor
         fields = ['doctor_name', 'details']
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['contact_name', 'details']
