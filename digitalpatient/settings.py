@@ -65,8 +65,9 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/profile'
 LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/profile'
 
 # Crispy forms template
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
