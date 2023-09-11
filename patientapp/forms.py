@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, MediDisList
 
 class PersonalDataForm(forms.ModelForm):
     class Meta:
@@ -12,3 +12,9 @@ class PersonalDataForm(forms.ModelForm):
         labels = {
             'want_resuscitate': 'I want to be resuscitate'
         }
+
+
+class MedicationListForm(forms.ModelForm):
+    class Meta:
+        model = MediDisList
+        fields = ['medication_or_disease_name', 'instructions']
