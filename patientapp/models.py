@@ -23,3 +23,15 @@ class MediDisList(models.Model):
 
     def __str__(self):
         return self.user_profile.user.username
+
+
+# Doctors
+class Doctor(models.Model):
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    doctor_name = models.CharField(max_length=200, null=True)
+    details = models.CharField(max_length=200, null=True, blank=True)
+
+
+    def __str__(self):
+        return self.user_profile.user.username
+
