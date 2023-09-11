@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth import logout
 from .models import UserProfile, MediDisList, Doctor, Contact
 from .forms import PersonalDataForm, MedicationListForm, DoctorForm, ContactForm
 
@@ -194,6 +195,21 @@ def delete_contact(request, entry_id):
         return redirect('contact')
 
     return render(request, 'delete_contact.html', {'entry': entry})
+
+
+def delete_account(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            password = request.POST.get('password')
+            if request.user.check_password(password):
+                request.user.delete()
+                logout(request)
+                messages.success(request, 'Your account has been successfully deleted.')
+                return redirect('home')
+            else:
+                messages.error(request, 'Password is invalid. Your account has not been deleted.')
+
+        return render(request, 'delete_account.html')
 
 
 # custom 404 view
