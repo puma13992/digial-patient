@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 <title>Personal data</title>
@@ -11,61 +12,43 @@
   <section class="container mt-5">
     <div class="row">
       <div class="col">
-        <h1 class="fw-semibold text-emphasis">Personal data</h1>
+        <h1 class="fw-semibold">Personal data</h1>
         <h2 class="my-3">Personal</h2>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <td>First name:</td>
-              <td>{{ user_profile.first_name|default:"" }}</td>
-            </tr>
-            <tr class="table-primary">
-              <td>Last name:</td>
-              <td>{{ user_profile.last_name|default:"" }}</td>
-            </tr>
-            <tr>
-              <td>Birthday:</td>
-              <td>{{ user_profile.birthday|default:"" }}</td>
-            </tr>
-            <tr class="table-primary">
-              <td>Address:</td>
-              <td>{{ user_profile.address|default:"" }}</td>
-            </tr>
-            <tr>
-              <td>I want to be resuscitated:</td>
-              <td>
-                  {% if user_profile.want_resuscitate == True %}
-                      Yes
-                  {% elif user_profile.want_resuscitate == False %}
-                      No
-                  {% else %}
-                      {{ user_profile.want_resuscitate|default:"" }}
-                  {% endif %}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <p class="fw-bold">First name:</p> {{ user_profile.first_name|default:"" }}
+          </li>
+          <li class="list-group-item">
+            <p class="fw-bold">Last name:</p> {{ user_profile.last_name|default:"" }}
+          </li>
+          <li class="list-group-item">
+            <p class="fw-bold">Birthday:</p> {{ user_profile.birthday|default:"" }}
+          </li>
+          <li class="list-group-item">
+            <p class="fw-bold">Address:</p> {{ user_profile.address|default:"" }}
+          </li>
+          <li class="list-group-item">
+            <p class="fw-bold">I want to be resuscitated:</p> 
+            {% if user_profile.want_resuscitate == True %}
+              Yes
+            {% elif user_profile.want_resuscitate == False %}
+              No
+            {% else %}
+                {{ user_profile.want_resuscitate|default:"" }}
+            {% endif %}
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="col-6 d-grid gap-2">
+    <div class="row pb-5 mb-5">
+      <div class="col-12 d-grid gap-2">
         <a href="{% url 'edit_personal_data' %}" class="btn btn-primary" role="button">Edit</a>
       </div>  
-    </div>    
-  </section>
-
-  <!--Pre-existing diseases and medications-->
-  <section class="container my-5">
-    <div class="row">
-      <div class="col">
-        <h2 class="my-3">
-          Pre-existing diseases and medications
-        </h2>
-      </div>
+    </div>  
   </section>
 
 {%endblock%}
