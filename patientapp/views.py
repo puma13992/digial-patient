@@ -185,6 +185,17 @@ def edit_contact(request, entry_id):
     return render(request, 'edit_contact.html', {'form': form, 'entry': entry})
 
 
+def delete_contact(request, entry_id):
+    entry = get_object_or_404(Contact, id=entry_id)
+
+    if request.method == 'POST':
+        entry.delete()
+        messages.success(request, 'Your entry has been successfully deleted.')
+        return redirect('contact')
+
+    return render(request, 'delete_contact.html', {'entry': entry})
+
+
 # custom 404 view
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
