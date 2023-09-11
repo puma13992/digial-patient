@@ -26,14 +26,14 @@
   <!--Cards-->
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 card-group mt-4">
+            <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
                 <div class="card">
                     <div class="card-header h5 bg-body-secondary">
                         Edit personal data
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Edit your personal data, like your pre-existing diseases and medications.
+                            Edit your personal data here.
                             You can also enter your no-reanimation declaration here.
                         </p>
                     </div>
@@ -42,7 +42,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 card-group mt-4">
+            <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
+                <div class="card">
+                    <div class="card-header h5 bg-body-secondary">
+                        Edit pre-existing diseases and medications 
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Edit your pre-existing diseases and medications here.
+                        </p>
+                    </div>
+                    <div class="d-grid gap-2 card-footer bg-transparent border border-0">
+                        <a href="{% url 'medidis' %}" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
                 <div class="card">
                     <div class="card-header h5 bg-body-secondary">
                         Edit doctors
@@ -57,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 card-group mt-4">
+            <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
                 <div class="card">
                     <div class="card-header h5 bg-body-secondary">
                         Edit contacts
