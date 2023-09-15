@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block title %}
 <title>Personal patient dossier</title>
 {% endblock %}
+
 
 {% block content %}
 
@@ -15,9 +17,9 @@
             Welcome to your electronic patient dossier
         </h1>
         <p class="my-3">
-            In this digital electronic patient dossier, you can store your personal data 
-            - including a no-reanimation declaration - as well as your specialist or general practitioner, 
-            medication intake, previous illnesses and contacts who should be contacted in acase of an emergency. 
+            In this digital electronic patient dossier, you can store your personal data
+            - including a no-reanimation declaration - as well as your specialist or general practitioner,
+            medication intake, previous illnesses and contacts who should be contacted in acase of an emergency.
         </p>
       </div>
     </div>
@@ -29,61 +31,61 @@
             <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
                 <div class="card">
                     <div class="card-header h5 bg-body-secondary">
-                        Edit personal data
+                        View personal data
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Edit your personal data here.
-                            You can also enter your no-reanimation declaration here.
+                            View or change your personal data here.
+                            You can also enter your no-reanimation declaration and share your account here.
                         </p>
                     </div>
                     <div class="d-grid gap-2 card-footer bg-transparent border border-0">
-                        <a href="{% url 'personal_data' %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'personal_data' %}" class="btn btn-primary">View</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
                 <div class="card">
                     <div class="card-header h5 bg-body-secondary">
-                        Edit pre-existing diseases and medications 
+                        View pre-existing diseases and medications
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Edit your pre-existing diseases and medications here.
+                            View, add, change or delete your pre-existing diseases and medications here.
                         </p>
                     </div>
                     <div class="d-grid gap-2 card-footer bg-transparent border border-0">
-                        <a href="{% url 'medidis' %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'medidis' %}" class="btn btn-primary">View</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
                 <div class="card">
                     <div class="card-header h5 bg-body-secondary">
-                        Edit doctors
+                        View doctors
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Add, change or delete your doctors here.
+                            View, add, change or delete your doctors here.
                         </p>
                     </div>
                     <div class="d-grid gap-2 card-footer bg-transparent border border-0 align-bottom">
-                        <a href="{% url 'doctor' %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'doctor' %}" class="btn btn-primary">View</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
                 <div class="card">
                     <div class="card-header h5 bg-body-secondary">
-                        Edit contacts
+                        View contacts
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Add, change or delete your contacts here.
+                            View, add, change or delete your contacts here.
                         </p>
                     </div>  
                     <div class="card-footer d-grid gap-2 bg-transparent border border-0 bottom-0">
-                        <a href="{% url 'contact' %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'contact' %}" class="btn btn-primary">View</a>
                     </div>
                 </div>
             </div>
@@ -97,11 +99,22 @@
                 Settings
             </h4>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 card mt-2">
-            <a class="btn btn-primary" href="#" role="button">Share information in emergencies</a>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 card mt-2">
-            <a class="btn btn-primary" href="{% url 'delete_account' %}" role="button">Delete account</a>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 card-group mt-4">
+                <div class="card">
+                    <div class="card-header h5 bg-body-secondary">
+                        Delete account
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            If you want to delete your account, you can do it here.
+                        </p>
+                    </div>  
+                    <div class="card-footer d-grid gap-2 bg-transparent border border-0 bottom-0">
+                        <a class="btn btn-primary" href="{% url 'delete_account' %}" role="button">Delete account</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
