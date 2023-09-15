@@ -1,16 +1,18 @@
 from django import forms
 from .models import UserProfile, MediDisList, Doctor, Contact
 
+
 class PersonalDataForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['first_name', 'last_name', 'birthday', 'address', 'want_resuscitate']
+        fields = ['first_name', 'last_name', 'birthday', 'address', 'want_resuscitate', 'share']
         widgets = {
             'birthday': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
         labels = {
-            'want_resuscitate': 'I want to be resuscitate'
+            'want_resuscitate': 'I want to be resuscitate',
+            'share': 'I want to share my account'
         }
 
 
