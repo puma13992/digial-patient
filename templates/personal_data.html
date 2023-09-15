@@ -41,6 +41,20 @@
                 {{ user_profile.want_resuscitate|default:"" }}
             {% endif %}
           </li>
+          <li class="list-group-item">
+            <p class="fw-bold">Share account:</p> 
+            {% if public_link %}
+            <p>Yes. Print this username and password and keep it in your wallet. Be careful with this; 
+              if the share account option is activated, this link is public!
+            </p>
+            <p>Öffentlicher Link: <a href="https://puma13992-digitalpatien-0kc40w9qan0.ws-eu104.gitpod.io/public_profile/{{ public_link }}/">
+              https://puma13992-digitalpatien-0kc40w9qan0.ws-eu104.gitpod.io/{{ public_link }}/
+              </a>
+            </p>
+            {% else %}
+            <p>No public link available.</p>
+            {% endif %}
+          </li>
         </ul>
       </div>
     </div>
