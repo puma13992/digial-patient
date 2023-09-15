@@ -9,6 +9,8 @@ class UserProfile(models.Model):
     birthday = models.DateField(null=True)
     address = models.TextField(null=True)
     want_resuscitate = models.BooleanField(default=True)
+    share = models.BooleanField(default=False)
+    public_link = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
