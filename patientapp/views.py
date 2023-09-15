@@ -223,6 +223,15 @@ def delete_account(request):
         return render(request, 'delete_account.html')
 
 
+def public_profile(request, public_link):
+    user_profile = get_object_or_404(UserProfile, public_link=public_link)
+    medication_entries = MediDisList.objects.filter(user_profile=user_profile)
+    doctor_entries = Doctor.objects.filter(user_profile=user_profile)
+    contact_entries = Contact.objects.filter(user_profile=user_profile)
+    
+    return render(request, 'public_profile.html', {'user_profile': user_profile, 'medication_entries': medication_entries, 'contact_entries': contact_entries, 'doctor_entries': doctor_entries})
+
+
 # custom 404 view
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
