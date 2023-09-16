@@ -11,8 +11,9 @@ class PersonalDataForm(forms.ModelForm):
             'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
         labels = {
-            'want_resuscitate': 'I want to be resuscitate',
-            'share': 'I want to share my account'
+            'address': 'Address & city',
+            'want_resuscitate': 'I want to be resuscitated',
+            'share': 'I want to share my account',
         }
 
 
