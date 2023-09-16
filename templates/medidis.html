@@ -18,6 +18,14 @@
       </div>
     </div>
     <div class="row">
+      <div class="col-12">
+        <p class="my-3">
+          Enter in "instructions" all important information that someone needs in case of an emergency 
+          (e.g. duration of intake, time of intake, strength of medication, duration of illness, etc.).
+        </p>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-12 mb-3">
         <form method="post">
           {% csrf_token %}
@@ -26,6 +34,11 @@
         </form>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12 d-grid gap-2">
+        <a href="{% url 'profile' %}" class="btn btn-outline-primary" role="button">Back to overview</a>
+      </div>  
+    </div>  
   </section>
 
   <!--List medications & diseases-->
