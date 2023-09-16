@@ -199,29 +199,37 @@ def contact(request):
 
 
 def edit_contact(request, entry_id):
-    entry = get_object_or_404(Contact, id=entry_id)
+    if request.user.is_authenticated:
+        entry = get_object_or_404(Contact, id=entry_id)
 
-    if request.method == 'POST':
-        form = ContactForm(request.POST, instance=entry)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your list has been successfully updated.')
-            return redirect('contact')
+        if request.method == 'POST':
+            form = ContactForm(request.POST, instance=entry)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Your list has been successfully updated.')
+                return redirect('contact')
+        else:
+            form = ContactForm(instance=entry)
+
+        return render(request, 'edit_contact.html', {'form': form, 'entry': entry})
     else:
-        form = ContactForm(instance=entry)
-
-    return render(request, 'edit_contact.html', {'form': form, 'entry': entry})
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 def delete_contact(request, entry_id):
-    entry = get_object_or_404(Contact, id=entry_id)
+    if request.user.is_authenticated:
+        entry = get_object_or_404(Contact, id=entry_id)
 
-    if request.method == 'POST':
-        entry.delete()
-        messages.success(request, 'Your entry has been successfully deleted.')
-        return redirect('contact')
+        if request.method == 'POST':
+            entry.delete()
+            messages.success(request, 'Your entry has been successfully deleted.')
+            return redirect('contact')
 
-    return render(request, 'delete_contact.html', {'entry': entry})
+        return render(request, 'delete_contact.html', {'entry': entry})
+    else:
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 def delete_account(request):
