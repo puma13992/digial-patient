@@ -29,7 +29,7 @@
             <p class="fw-bold">Birthday:</p> {{ user_profile.birthday|default:"" }}
           </li>
           <li class="list-group-item">
-            <p class="fw-bold">Address:</p> {{ user_profile.address|default:"" }}
+            <p class="fw-bold">Address & city:</p> {{ user_profile.address|default:"" }}
           </li>
           <li class="list-group-item">
             <p class="fw-bold">I want to be resuscitated:</p> 
@@ -58,11 +58,16 @@
         </ul>
       </div>
     </div>
-    <div class="row pb-5 mb-5">
+    <div class="row my-3">
       <div class="col-12 d-grid gap-2">
         <a href="{% url 'edit_personal_data' %}" class="btn btn-primary" role="button">Edit</a>
       </div>  
-    </div>  
+    </div>
+    <div class="row pb-5 mb-5">
+      <div class="col-12 d-grid gap-2">
+        <a href="{% url 'profile' %}" class="btn btn-outline-primary" role="button">Back to overview</a>
+      </div>  
+    </div> 
   </section>
 
 {%endblock%}
