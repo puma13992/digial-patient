@@ -83,29 +83,37 @@ def medidis(request):
 
 
 def edit_medidis(request, entry_id):
-    entry = get_object_or_404(MediDisList, id=entry_id)
+    if request.user.is_authenticated:
+        entry = get_object_or_404(MediDisList, id=entry_id)
 
-    if request.method == 'POST':
-        form = MedicationListForm(request.POST, instance=entry)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your list has been successfully updated.')
-            return redirect('medidis')
+        if request.method == 'POST':
+            form = MedicationListForm(request.POST, instance=entry)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Your list has been successfully updated.')
+                return redirect('medidis')
+        else:
+            form = MedicationListForm(instance=entry)
+
+        return render(request, 'edit_medidis.html', {'form': form, 'entry': entry})
     else:
-        form = MedicationListForm(instance=entry)
-
-    return render(request, 'edit_medidis.html', {'form': form, 'entry': entry})
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 def delete_medidis(request, entry_id):
-    entry = get_object_or_404(MediDisList, id=entry_id)
+    if request.user.is_authenticated:
+        entry = get_object_or_404(MediDisList, id=entry_id)
 
-    if request.method == 'POST':
-        entry.delete()
-        messages.success(request, 'Your entry has been successfully deleted.')
-        return redirect('medidis')
+        if request.method == 'POST':
+            entry.delete()
+            messages.success(request, 'Your entry has been successfully deleted.')
+            return redirect('medidis')
 
-    return render(request, 'delete_medidis.html', {'entry': entry})
+        return render(request, 'delete_medidis.html', {'entry': entry})
+    else:
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 def doctor(request):
