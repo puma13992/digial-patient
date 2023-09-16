@@ -141,29 +141,37 @@ def doctor(request):
 
 
 def edit_doctor(request, entry_id):
-    entry = get_object_or_404(Doctor, id=entry_id)
+    if request.user.is_authenticated:
+        entry = get_object_or_404(Doctor, id=entry_id)
 
-    if request.method == 'POST':
-        form = DoctorForm(request.POST, instance=entry)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your list has been successfully updated.')
-            return redirect('doctor')
+        if request.method == 'POST':
+            form = DoctorForm(request.POST, instance=entry)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Your list has been successfully updated.')
+                return redirect('doctor')
+        else:
+            form = DoctorForm(instance=entry)
+
+        return render(request, 'edit_doctor.html', {'form': form, 'entry': entry})
     else:
-        form = DoctorForm(instance=entry)
-
-    return render(request, 'edit_doctor.html', {'form': form, 'entry': entry})
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 def delete_doctor(request, entry_id):
-    entry = get_object_or_404(Doctor, id=entry_id)
+    if request.user.is_authenticated:
+        entry = get_object_or_404(Doctor, id=entry_id)
 
-    if request.method == 'POST':
-        entry.delete()
-        messages.success(request, 'Your entry has been successfully deleted.')
-        return redirect('doctor')
+        if request.method == 'POST':
+            entry.delete()
+            messages.success(request, 'Your entry has been successfully deleted.')
+            return redirect('doctor')
 
-    return render(request, 'delete_doctor.html', {'entry': entry})
+        return render(request, 'delete_doctor.html', {'entry': entry})
+    else:
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 def contact(request):
