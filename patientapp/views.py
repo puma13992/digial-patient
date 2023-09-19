@@ -195,7 +195,7 @@ def contact(request):
                 contact_entry.user_profile = user_profile
                 contact_entry.save()
                 messages.success(request, 'Your list has been successfully updated.')
-                return redirect('contact')
+                form = ContactForm()
         else:
             form = ContactForm()
 
