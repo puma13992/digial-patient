@@ -133,7 +133,7 @@ def doctor(request):
                 doctor_entry.user_profile = user_profile
                 doctor_entry.save()
                 messages.success(request, 'Your list has been successfully updated.')
-                return redirect('doctor')
+                form = DoctorForm()
         else:
             form = DoctorForm()
 
