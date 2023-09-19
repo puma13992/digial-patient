@@ -224,7 +224,9 @@ def edit_contact(request, entry_id):
         return render(request, 'edit_contact.html', {'form': form, 'entry': entry})
     else:
         messages.error(request, 'You have to be logged in to show this page.')
-        return redirect('../accounts/login/')
+        next_url = reverse('edit_contact', args=[entry_id])
+        login_url = '/accounts/login' + f'?next={next_url}'
+        return HttpResponseRedirect(login_url)
 
 
 def delete_contact(request, entry_id):
@@ -239,7 +241,9 @@ def delete_contact(request, entry_id):
         return render(request, 'delete_contact.html', {'entry': entry})
     else:
         messages.error(request, 'You have to be logged in to show this page.')
-        return redirect('../accounts/login/')
+        next_url = reverse('delete_contact', args=[entry_id])
+        login_url = '/accounts/login' + f'?next={next_url}'
+        return HttpResponseRedirect(login_url)
 
 
 def delete_account(request):
