@@ -69,7 +69,7 @@ def medidis(request):
                 medication_entry.user_profile = user_profile
                 medication_entry.save()
                 messages.success(request, 'Your list has been successfully updated.')
-                return redirect('medidis')
+                form = MedicationListForm()
         else:
             form = MedicationListForm()
 
