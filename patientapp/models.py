@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Personal data
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -22,7 +23,6 @@ class MediDisList(models.Model):
     medication_or_disease_name = models.CharField(max_length=200, null=True)
     instructions = models.CharField(max_length=200, null=True, blank=True)
 
-
     def __str__(self):
         return self.user_profile.user.username
 
@@ -33,7 +33,6 @@ class Doctor(models.Model):
     doctor_name = models.CharField(max_length=200, null=True)
     details = models.CharField(max_length=200, null=True, blank=True)
 
-
     def __str__(self):
         return self.user_profile.user.username
 
@@ -43,7 +42,6 @@ class Contact(models.Model):
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     contact_name = models.CharField(max_length=200, null=True)
     details = models.CharField(max_length=200, null=True, blank=True)
-
 
     def __str__(self):
         return self.user_profile.user.username
