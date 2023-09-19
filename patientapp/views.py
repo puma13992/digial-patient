@@ -259,6 +259,9 @@ def delete_account(request):
                 messages.error(request, 'Password is invalid. Your account has not been deleted.')
 
         return render(request, 'delete_account.html')
+    else:
+        messages.error(request, 'You have to be logged in to show this page.')
+        return redirect('../accounts/login/')
 
 
 def public_profile(request, public_link):
