@@ -4,6 +4,8 @@ from django.contrib.auth import logout
 from .models import UserProfile, MediDisList, Doctor, Contact
 from .forms import PersonalDataForm, MedicationListForm, DoctorForm, ContactForm
 from django.utils.crypto import get_random_string
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 
 def home(request):
@@ -98,7 +100,9 @@ def edit_medidis(request, entry_id):
         return render(request, 'edit_medidis.html', {'form': form, 'entry': entry})
     else:
         messages.error(request, 'You have to be logged in to show this page.')
-        return redirect('../accounts/login/')
+        next_url = reverse('edit_medidis', args=[entry_id])
+        login_url = '/accounts/login' + f'?next={next_url}'
+        return HttpResponseRedirect(login_url)
 
 
 def delete_medidis(request, entry_id):
@@ -113,7 +117,9 @@ def delete_medidis(request, entry_id):
         return render(request, 'delete_medidis.html', {'entry': entry})
     else:
         messages.error(request, 'You have to be logged in to show this page.')
-        return redirect('../accounts/login/')
+        next_url = reverse('delete_medidis', args=[entry_id])
+        login_url = '/accounts/login' + f'?next={next_url}'
+        return HttpResponseRedirect(login_url)
 
 
 def doctor(request):
