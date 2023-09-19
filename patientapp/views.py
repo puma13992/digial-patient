@@ -162,7 +162,9 @@ def edit_doctor(request, entry_id):
         return render(request, 'edit_doctor.html', {'form': form, 'entry': entry})
     else:
         messages.error(request, 'You have to be logged in to show this page.')
-        return redirect('../accounts/login/')
+        next_url = reverse('edit_doctor', args=[entry_id])
+        login_url = '/accounts/login' + f'?next={next_url}'
+        return HttpResponseRedirect(login_url)
 
 
 def delete_doctor(request, entry_id):
@@ -177,7 +179,9 @@ def delete_doctor(request, entry_id):
         return render(request, 'delete_doctor.html', {'entry': entry})
     else:
         messages.error(request, 'You have to be logged in to show this page.')
-        return redirect('../accounts/login/')
+        next_url = reverse('delete_doctor', args=[entry_id])
+        login_url = '/accounts/login' + f'?next={next_url}'
+        return HttpResponseRedirect(login_url)
 
 
 def contact(request):
