@@ -1,6 +1,6 @@
 ## CONTENTS
 
-* [Introduction](#digital-patient)
+* [Introduction](#introduction-digital-patient)
 * [User Experience - UX](#user-experience)
   * [UX](#ux)
     * [Site purpose](#site-purpose)
@@ -29,3 +29,15 @@
   * [Running the project locally](#running-the-project-locally)
   * [Deploying with Heroku](#deploying-with-heroku)
 * [Credits](#credits)
+
+
+# Introduction: Digital patient
+
+Project Portfolio 4 for Code Institute Full-stack development program. Digital patient is a full stack Django project that runs on Heroku.
+
+The site allows users to register and log in from the frontend. Once registered and logged in users can edit personal data, edit, add and delete diseases/medications, doctors and contacts.
+
+The live website on Heroku can be accessed at the following link: [View my Live Website here](https://digital-patient-807175a8312b.herokuapp.com/){:target="_blank"} 
+
+
+![Digital patient](static/readme/mockup.JPG)
