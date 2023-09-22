@@ -37,7 +37,7 @@ Project Portfolio 4 for Code Institute Full-stack development program. Digital p
 
 The site allows users to register and log in from the frontend. Once registered and logged in users can edit personal data, edit, add and delete diseases/medications, doctors and contacts.
 
-The live website on Heroku can be accessed at the following link: [View my Live Website here](https://digital-patient-807175a8312b.herokuapp.com/){:target="_blank"} 
+The live website on Heroku can be accessed at the following link: [View my Live Website here](https://digital-patient-807175a8312b.herokuapp.com/)
 
 
-![Digital patient](static/readme/mockup.JPG)
+![Digital patient](static//media/readme/mockup.JPG)
