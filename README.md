@@ -40,7 +40,7 @@ The site allows users to register and log in from the frontend. Once registered 
 The live website on Heroku can be accessed at the following link: [View my Live Website here](https://digital-patient-807175a8312b.herokuapp.com/)
 
 
-![Digital patient](static//media/readme/mockup.JPG)
+![Digital patient](static/media/readme/mockup.JPG)
 
 # User Experience
 <a href="#top">Back to the top.</a>
@@ -88,3 +88,23 @@ Through the use of the Kanban board in the projects view in Github, the project 
 - Done
 
 Milestones were used to create sprints. There were 3 sprints each dated appropriately. User Stories were completed based on the current sprint in progress. Each sprint was completed on time.
+
+## Design
+
+### Colors
+
+I decided to use calming colors, primarily shades of blue. Blue is the typical business color, as it is sober, businesslike, calming and trustworthy, and it maintains its character even in different gradations. It best connects to the goal of the website. To keep the contrast between the background and the font, a basis black tone and a lightly grey is included. All colors also connect to Bootstrap's existing colors (primary, secondary and dark).
+
+![Colors](static/media/readme/color-scheme-digital-patient.JPG)
+
+### Typography
+
+Utilized the Bootstrap 5 native font stack that selects the best font-family for each OS and device. Besides this, the font gives a calm and serious impression.
+
+### Media
+The pictures (background image, favicons) were taken from [Pixabay](https://pixabay.com/).
+
+### Database scheme
+The database model reflects the different areas of the website: the personal data through the model "UserProfile", the entries for medications/diseases through the model "MediDisLis", the entries for doctors through the model "Doctor" and the entries for contacts through the model "Contact".
+
+![Database scheme](static/media/readme/database-schema.png)
