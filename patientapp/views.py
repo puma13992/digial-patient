@@ -35,7 +35,13 @@ def edit_personal_data(request):
         if request.method == 'POST':
             form = PersonalDataForm(request.POST, instance=user_profile)
             if form.is_valid():
-                if 'share' in form.changed_data and user_profile.share:
+                if (
+                    'share' in form.changed_data and user_profile.share
+                    ) or (
+                        'want_resuscitate' in form.changed_data
+                        and not user_profile.want_resuscitate
+                        and user_profile.share
+                        ):
                     public_link = f"shared_link_{get_random_string()}"
                     user_profile.public_link = public_link
                 else:
