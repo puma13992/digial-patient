@@ -108,3 +108,42 @@ The pictures (background image, favicons) were taken from [Pixabay](https://pixa
 The database model reflects the different areas of the website: the personal data through the model "UserProfile", the entries for medications/diseases through the model "MediDisLis", the entries for doctors through the model "Doctor" and the entries for contacts through the model "Contact".
 
 ![Database scheme](static/media/readme/database-schema.png)
+
+### Wireframes
+Initial wireframes
+
+#### Home page
+
+![Home page](static/media/readme/wireframe-home.png)
+
+#### Register
+
+![Register](static/media/readme/wireframe-register.png)
+
+#### Login
+
+![Login](static/media/readme/wireframe-login.png)
+
+#### Overview (profile)
+
+![Overview](static/media/readme/wireframe-profile-overview.png)
+
+#### Personal data
+
+![Personal data](static/media/readme/wireframe-personal-data-view.png)
+
+#### Edit personal data
+
+![Edit personal data](static/media/readme/wireframe-edit-personal-data.png)
+
+#### Medications/Diseases
+
+![Medications/Diseases](static/media/readme/wireframes-medications-diseases.png)
+
+#### Doctors
+
+![Doctors](static/media/readme/wireframe-doctors.png)
+
+#### Contacts
+
+![Contacts](static/media/readme/wireframe-contacts.png)
