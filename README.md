@@ -60,3 +60,31 @@ A tool like this does not (yet) exist in Germany, and in the case of an emergenc
 ### Audience
 
 For anyone who wants to have all their emergency data on one platform for potential doctors in case of an emergency.
+
+## User stories
+
+### First time user goals
+
+- As a first time user I can find information what the purpose of the website is.
+
+### Returning user goals
+
+- As a (returning) user I can register for an account so that I can login after registration.
+- As a returning user I can log in to my registered account.
+- As a returning user I can log out of my registered account.
+- As a returning user I can edit my personal data.
+- As a returning user I can edit, add and delete medication/diseases, doctors and contacts in my registered account.
+- As a returning user I can share a readable version of my account with potential doctors in case of an emergency.
+
+## Agile methodology
+
+The principles of agile methodology were utilized during the project. Github issues were used to create User Stories for the project. Each user story (including user acceptance criteria, tasks and story points) can be displayed on the board or in the issues. By assigning user stories to issues and taking advantage of the GitHub Kanban board functionality, the necessary goals and priorities throughout the project could be well defined. In addition, labels were used to further define the priority of each user story in the Kanban board.
+
+Through the use of the Kanban board in the projects view in Github, the project was divived into a few different sections:
+
+- Add-ons
+- To-do
+- In progress
+- Done
+
+Milestones were used to create sprints. There were 3 sprints each dated appropriately. User Stories were completed based on the current sprint in progress. Each sprint was completed on time.
