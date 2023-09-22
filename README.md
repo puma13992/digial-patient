@@ -41,3 +41,22 @@ The live website on Heroku can be accessed at the following link: [View my Live 
 
 
 ![Digital patient](static//media/readme/mockup.JPG)
+
+# User Experience
+<a href="#top">Back to the top.</a>
+
+## UX
+
+### Site purpose
+
+This program is designed to make it easier for a patient to keep track of their doctors, diseases, medications, as well as (emergency) contacts. In addition, in the case of an emergency, it should be possible for doctors to see a readable version of the patient's profile to see previous diseases, medications, previous doctors and emergency contacts.
+
+### Site goal
+
+To build a website where a kind of digital patient dossier can be easily shared by the patient him/herself for possible emergencies.
+
+A tool like this does not (yet) exist in Germany, and in the case of an emergency with, for example, an unconscious patient, the doctors may not know any previous diseases, medications, general practitioners or emergency contacts, or they may first have to laboriously collect these on individual platforms or (mobile) devices.
+
+### Audience
+
+For anyone who wants to have all their emergency data on one platform for potential doctors in case of an emergency.
