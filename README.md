@@ -147,3 +147,90 @@ Initial wireframes
 #### Contacts
 
 ![Contacts](static/media/readme/wireframe-contacts.png)
+
+# Features
+<a href="#top">Back to the top.</a>
+
+## Existing features
+
+- __Home screen__
+  - The home screen shows information about the website and explains briefly in a FAQ the most important things.
+  - The image is intended to symbolize the interface between doctor and patient via the digital medium/the website.
+
+  ![Home screen](static/media/readme/home-screen.png)
+
+- __Navigation Bar__
+  - The navigation bar appears on each page.
+  - The home screen can be displayed by clicking on the logo on the left side.
+  - The navigation bar for unauthenticated users contains links to the home screen, register and login.
+
+  ![Navigation bar unauthenticated users](static/media/readme/navigation-bar-unauthenticated.png)
+
+  - The navigation bar for authenticated users contains links for logout and a drop down menu with links to the five important pages of the website: Overview (profile), personal data, medication/diseases, doctors, contacts.
+
+  ![Navigation bar authenticated users](static/media/readme/navigation-bar-authenticated.png)
+  ![Navigation bar authenticated users dropdown](static/media/readme/navigation-bar-authenticated-drop-down.png)
+
+  - The navigation bar will allow the users to easily navigate from page to page across all devices.
+  - The navigation bar is fully responsive. On smaller devices, the hamburger menu appears with an expanded menu bar.
+
+  ![Navigation bar unauthenticated users mobile](static/media/readme/navigation-bar-unauthenticated-mobile.png)
+
+  ![Navigation bar authenticated users mobile](static/media/readme/navigation-bar-authenticated-mobile.png)
+
+- __Footer__
+  - The footer appears on each page.
+  - The footer is sticky.
+  - The footer contains a copyright and a link to Code Institute which opens in a new tab.
+
+  ![Footer](static/media/readme/footer.png)
+
+- __Register__
+  - The page is intended for new users to register. 
+  - The users have to enter an e-mail address, a username and the password twice.
+
+  ![Register](static/media/readme/register.png)
+  
+  - After successful registration, users should receive a confirmation email.
+
+  ![Confirmation email](static/media/readme/registration-mail.png)
+
+  - When users click on the link in the mail, they are redirected to the email confirmation page.
+  - After clicking the "Confirm" button, they will be redirected to overview.
+
+  ![Confirm email](static/media/readme/confirm-email.png)
+
+  - If the link is invalid or expired, an error message appears.
+
+  ![Confirm email link expired](static/media/readme/confirm-email-link-expired.PNG)
+
+- __Login__
+  - The page is intended for registered users to log in. 
+  - The users have to enter their e-mail address or username and the password.
+  - When logging in, the 'Remember me' function can also be activated.
+
+  ![Login](static/media/readme/login.png)
+
+- __Logout__
+  - The page is intended for registered users to log out. 
+  - The user is asked if he/she really wants to log out before the final logout. 
+  - Only after confirming by clicking on the button, the user is logged out and redirected to the home screen.
+
+  ![Logout](static/media/readme/logout.png)
+
+- __Lost password__
+  - The page is intended for registered users to get a new password if they forgot it. 
+  - Users can get a new password by clicking on the 'Forgot password' button. They will then be redirected and will need to enter their registered email address.
+
+  ![Lost password](static/media/readme/password-reset.png)
+  ![Lost password email address](static/media/readme/password-reset-sending-mail.png)
+
+  - Users will then receive a reset link to their registered email address.
+  - In this email, users will also be reminded of their username.
+
+  ![Lost password reset mail](static/media/readme/password-reset-mail.png)
+
+  - After clicking the link in the email, users can set a new password, which they have to type twice.
+
+  ![Change password](static/media/readme/change-password.png)
+  ![Change password confirmation](static/media/readme/changed-password-confirmation.png)
