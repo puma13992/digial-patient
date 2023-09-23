@@ -470,3 +470,8 @@ Initial wireframes
   - For authentication, registration, account management
 - [App.diagram](https://app.diagrams.net/)
   - Was used to create the database schema
+
+# Testing
+<a href="#top">Back to the top.</a>
+
+All testing results can be found [here](TESTING.md)
