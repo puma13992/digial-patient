@@ -421,3 +421,52 @@ Initial wireframes
 - For a future version, other registration/login options - e.g. via Google or Github - could be added.
 - For a future version, even more functions could be added in the account, such as detailed instructions on what actions to take or refrain from taking in emergencies.
 - For a future version, an upload function, e.g. for doctor's letters or similar, could be added.
+
+# Technologies used
+<a href="#top">Back to the top.</a>
+
+## Languages
+- Python
+- JavaScript
+- HTML5
+- CSS3
+
+## Frameworks, libraries, programs
+
+- [Git](https://git-scm.com/)
+  - Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+- [Github](https://github.com/)
+  - GitHub was used to store the project's code after being pushed from Git
+- [Am I Responsive](http://ami.responsivedesign.is/) 
+    - Am I responsive was used to create the multi-device mock-up you can see at the start of this README.md file
+- [Favicon.io](https://favicon.io/)
+    - Favicon.io was used for making the site favicon
+- [WC3 Validator](https://validator.w3.org/), [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/), [JS validator](https://jshint.com/) and [PEP8](https://pep8ci.herokuapp.com/) were all used to validate the website
+- Python Built-in Modules:
+  - [os](https://docs.python.org/3/library/os.html) 
+- [Bootstrap](https://getbootstrap.com/)
+  - Was used to create the front-end design
+- [Balsamiq](https://balsamiq.com/)
+  - Was used to create wireframes
+- [Coloors](https://coolors.co/)
+  - Was used to create the color scheme
+- [Djecrety](https://djecrety.ir/)
+  - Was used to create a secret key
+- [Gunicorn](https://gunicorn.org/)
+  - As the server for Heroku
+- [Cloudinary](https://cloudinary.com/)
+  - Was used to host the static files and media
+- [Dj_database_url](https://pypi.org/project/dj-database-url/)
+  - To parse the database URL from the environment variables in Heroku
+- [Psycopg2](https://pypi.org/project/psycopg2/)
+  - As an adaptor for Python and PostgreSQL databases
+- [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+  - For authentication, registration, account management
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+  - To style the forms
+- [Django](https://pypi.org/project/Django/3.2.14/) 
+  - As a framework for Python
+- [Allauth](https://django-allauth.readthedocs.io/en/latest/)
+  - For authentication, registration, account management
+- [App.diagram](https://app.diagrams.net/)
+  - Was used to create the database schema
