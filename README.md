@@ -487,3 +487,28 @@ All testing results can be found [here](TESTING.md)
     - git commit -m "Description of the update" - to save the change and commit the change to the local repo
     - git push - to push all committed changes to the GitHub
     - commit --amend - for changing the wording or spelling of the most recent commit
+
+## Forking
+
+1. Go to [the project repository](https://github.com/puma13992/digital-patient)
+2. In the right most top menu, click the "Fork" button.
+3. There will now be a copy of the repository in your own GitHub account.
+
+## Cloning the repo with GitPod or Codeanywhere
+
+- Log in to your GitHub account
+  - Navigate to the [repository](https://github.com/puma13992/digital-patient)
+  - Select the 'Code' button above the file list on the right had side
+  - Ensure HTTPS is selected and click the clipboard on the right of the URL to copy it
+  - Open a new workspace in GitPod or Codeanywhere
+  - In the bash terminal type 'git clone [copy url here from step 4]'
+  - Press enter - the IDE will clone and download the repo
+
+## Running the project locally
+
+1. Go to [the project repository](https://github.com/puma13992/digital-patient)
+2. Click on the "Code" button.
+3. Choose one of the three options (HTTPS, SSH or GitHub CLI) and then click copy.
+4. Open the terminal in you IDE program. 
+5. Type `git clone` and paste the URL that was copied in step 3.
+6. Press Enter and the local clone will be created. 
