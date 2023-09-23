@@ -415,3 +415,9 @@ Initial wireframes
 
   ![Delete contact - modal](static/media/readme/delete-contact-cancel-modal.png)
   
+  ## Future features
+- For a future version, the function to change the password in the account itself could still be added.
+- For a future version, the function to change the email address in the account itself could be added.
+- For a future version, other registration/login options - e.g. via Google or Github - could be added.
+- For a future version, even more functions could be added in the account, such as detailed instructions on what actions to take or refrain from taking in emergencies.
+- For a future version, an upload function, e.g. for doctor's letters or similar, could be added.
