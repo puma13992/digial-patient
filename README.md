@@ -234,3 +234,184 @@ Initial wireframes
 
   ![Change password](static/media/readme/change-password.png)
   ![Change password confirmation](static/media/readme/changed-password-confirmation.png)
+
+- __Overview__
+  - The page is intended as an overview of the various options available on the website.
+  - The page includes links to all five options: Personal data & share account, pre-existing diseases and medications, doctors, contacts and delete account.
+
+  ![Overview](static/media/readme/overview.png)
+
+- __Messages__
+  - Messages appear for almost all relevant operations on the website, e.g. information about login, logout, add, edit, delete.
+
+  ![Message success](static/media/readme/message-success.png)
+  ![Message information](static/media/readme/message-info.png)
+  ![Message error](static/media/readme/message-error.png)
+
+- __Delete account__
+  - In the overview, users will find a button "Delete account".
+  - After clicking the button, users will be prompted to enter their password.
+
+  ![Delete account page](static/media/readme/delete-account.png)
+
+  - Only if the password is entered correctly, the account will be deleted.
+  - If the input is incorrect, the user will be redirected back to the password input.
+
+  ![Invalid password](static/media/readme/delete-account-invalid-password.PNG)
+  
+  - Users can also cancel the account deletion by clicking the cancel button.
+  - If the password is correct, the users will be redirected to the home screen and a message appears that the account deletion was successful.
+  - Users will no longer be able to log in with their old credentials.
+
+  ![Account deletion succesful](static/media/readme/delete-account-confirm.PNG)
+
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they really want to discard their changes. 
+  - If the users choose "No", they will stay on the delete page, if they choose "Yes", they will be redirected back to the overview.
+
+  ![Delete account - modal](static/media/readme/delete-account-cancel-modal.PNG)
+
+- __Personal data__
+  - Users can see their personal data entries on this page.
+  - Users can edit them at any time by clicking on the "Edit" button.
+  - Users can click on the "Back to overview" button to return to the overview.
+  - The "I want to be resuscitated" field is turned on by default for new users without entries.
+  - The "Share account" field is turned off by default for new users without entries.
+
+  ![View personal data - new users](static/media/readme/personal-data-new-user.png)
+  ![View personal data - returning users](static/media/readme/personal-data-returning-user.png)
+
+- __Edit personal data__
+  - New users can enter their data here for the first time (first name, last name, birthday, address & city, I want to be resuscitated, share account).
+  - All fields - except "share account" and "I want to be resuscitated" - are required.
+
+  ![Edit personal data - new users](static/media/readme/edit-personal-data-new-user.png)
+
+  - Returning users can change their entries at any time.
+  - By clicking on the "Save" button, the entries are saved and the user is returned to the personal data view.
+  - When users enable "share account", a randomized link is automatically generated that allows non-logged-in or non-registered users to view a non-editable overview of the user's entries in case of emergency.
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they really want to discard their changes. 
+  - If the users choose "No", they will stay on the edit personal data page, if they choose "Yes", they will be redirected back to the view personal data page.
+
+  ![Edit personal data - returning users](static/media/readme/edit-personal-data-returning-user.png)
+  ![Edit personal data - modal](static/media/readme/edit-personal-data-cancel-modal.png)
+
+- __Public profile__
+  - When registered users enable "share account", a randomized link is automatically generated that allows non-logged-in or non-registered users to view a non-editable overview of the user's entries in case of emergency.
+
+  ![Public profile](static/media/readme/public-profile-entries-1.png)
+  ![Public profile](static/media/readme/public-profile-entries-2.png)
+
+- __Medication/diseases__
+  - Users can enter their data here (medication/disease name and instructions).
+  - The field for mediation or disease name is required.
+  - Clicking the "Add" button adds new entries.
+  - If there are no entries (yet), this will be indicated to the users accordingly.
+  - Users can click on the "Back to overview" button to return to the overview.
+
+  ![Medication/diseases - new users](static/media/readme/medication-diseases-new-user.png)
+
+  - If entries exist, they will be displayed to the users below the Add form.
+  - For each entry there is a possibility to edit or delete it.
+
+  ![Medication/diseases - returning users](static/media/readme/medication-diseases-returning-user.png)
+
+- __Edit medication/diseases__
+  - Users can edit their data here (medication/disease name and instructions).
+  - The field for mediation or disease name is required.
+  - When clicking on the "Save" button, the changes will be saved and the users will be redirected back to the medication/diseases view.
+
+  ![Edit medication/diseases](static/media/readme/edit-medidis.png)
+
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they really want to discard their changes. 
+  - If the users choose "No", they will stay on the edit page, if they choose "Yes", they will be redirected back to the medication/diseases view.
+
+  ![Edit medication/diseases - modal](static/media/readme/edit-medidis-cancel-modal.png)
+
+- __Delete medication/diseases__
+  - Users can delete one of their medication/diseases entries here.
+  - When clicking on the "Delete" button, the changes will be saved and the users will be redirected back to the medication/diseases view.
+  - The deleted entry is no longer displayed.
+
+  ![Delete medication/diseases](static/media/readme/delete-medidis.png)
+
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they are sure to cancel the delete.
+  - If the users choose "No", they will stay on the delete page, if they choose "Yes", they will be redirected back to the medication/diseases view.
+
+  ![Delete medication/diseases - modal](static/media/readme/delete-medidis-cancel-modal.png)
+
+- __Doctors__
+  - Users can enter their data here (doctor name and details).
+  - The field for the doctor name is required.
+  - Clicking the "Add" button adds new entries.
+  - If there are no entries (yet), this will be indicated to the users accordingly.
+  - Users can click on the "Back to overview" button to return to the overview.
+
+  ![Doctors - new users](static/media/readme/doctors-new-user.png)
+
+  - If entries exist, they will be displayed to the users below the Add form.
+  - For each entry there is a possibility to edit or delete it.
+
+  ![Doctors - returning users](static/media/readme/doctors-returning-users.png)
+
+- __Edit doctors__
+  - Users can edit their data here (doctor name and details).
+  - The field for the doctor name is required.
+  - When clicking on the "Save" button, the changes will be saved and the users will be redirected back to the doctors view.
+
+  ![Edit doctor](static/media/readme/edit-doctor.png)
+
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they really want to discard their changes. 
+  - If the users choose "No", they will stay on the edit page, if they choose "Yes", they will be redirected back to the doctors view.
+
+  ![Edit doctor - modal](static/media/readme/edit-doctor-cancel-modal.png)
+
+- __Delete doctors__
+  - Users can delete one of their doctor entries here.
+  - When clicking on the "Delete" button, the changes will be saved and the users will be redirected back to the doctors view.
+  - The deleted entry is no longer displayed.
+
+  ![Delete doctor](static/media/readme/delete-doctor.png)
+
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they are sure to cancel the delete.
+  - If the users choose "No", they will stay on the delete page, if they choose "Yes", they will be redirected back to the doctors view.
+
+  ![Delete doctor - modal](static/media/readme/delete-doctor-cancel-modal.png)
+
+- __Contacts__
+  - Users can enter their data here (contact name and details).
+  - The field for the contact name is required.
+  - Clicking the "Add" button adds new entries.
+  - If there are no entries (yet), this will be indicated to the users accordingly.
+  - Users can click on the "Back to overview" button to return to the overview.
+
+  ![Contacts - new users](static/media/readme/contacts-new-user.png)
+
+  - If entries exist, they will be displayed to the users below the Add form.
+  - For each entry there is a possibility to edit or delete it.
+
+  ![Contacts - returning users](static/media/readme/contacts-returning-user.png)
+
+- __Edit contacts__
+  - Users can edit their data here (contact name and details).
+  - The field for the contact name is required.
+  - When clicking on the "Save" button, the changes will be saved and the users will be redirected back to the contacts view.
+
+  ![Edit contact](static/media/readme/edit-contact.png)
+
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they really want to discard their changes. 
+  - If the users choose "No", they will stay on the edit page, if they choose "Yes", they will be redirected back to the contacts view.
+
+  ![Edit contact - modal](static/media/readme/edit-contact-cancel-modal.png)
+
+- __Delete contacts__
+  - Users can delete one of their contact entries here.
+  - When clicking on the "Delete" button, the changes will be saved and the users will be redirected back to the contacts view.
+  - The deleted entry is no longer displayed.
+
+  ![Delete contact](static/media/readme/delete-contact.png)
+
+  - When clicking on the "Cancel" button, a modal appears and asks the users if they are sure to cancel the delete.
+  - If the users choose "No", they will stay on the delete page, if they choose "Yes", they will be redirected back to the contacts view.
+
+  ![Delete contact - modal](static/media/readme/delete-contact-cancel-modal.png)
+  
