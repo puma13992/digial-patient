@@ -250,3 +250,42 @@ With "coverage html" a html report was created.
 | Delete account                  | \- Delete my account if I click the button in my profile.                              | for authenticated users only; unauthenticated users receive an error message and are redirected to login | Pass    | Manually & automatically |
 |                                 | \- Can't log in anymore after deleting my account.                                     | for previously registered users                                                                          | Pass    | Manually                 |                                                  |                           |      | Manually    |
 
+
+## Bugs
+<a href="#top">Back to the top.</a>
+
+### Fixed bugs
+
+#### Wrong user modell
+During the first phase of programming the user model, errors were found regarding the user configuration. This was fixed by the following steps:
+1. Delete the db.sqlite3 file. If this file contains important data, you might want to settle a backup for those.
+2. In ElephantSQL, in the Details dashboard, click on the ‘Reset’ button
+3. Delete all the migrations files inside the migration folder of all the Django applications (EXCEPT for __init__.py file, this is important).
+4. Make migrations (use sqlite3 database for migrations) with:
+  - `python3 manage.py makemigrations --dry-run`
+  - `python3 manage.py makemigrations`
+  - `python3 manage.py migrate --plan`
+  - `python3 manage.py migrate`
+5. Comment out sqlite3-database locally again and set it back to ElephantSQL; repeat migration steps.
+6. From there, just need to create a new superuser with:
+  - `python3 manage.py createsuperuser`
+
+#### Replace 2nd login
+At the beginning a new user should be created automatically for the share-account function at share = Yes. I reached some limits and decided to generate 'only' a public link, which works similar - just without login.
+
+#### No redirection in edit/delete options
+There was no redirection for not authenticated users in the edit/delete options. This was added later.
+
+#### Can't login with email
+Despite the settings in `settings.py` it was not possible to log in with his registered email address. The settings were therefore reset to login with username only.
+
+#### Can't build URL
+A link should be generated automatically for the public link. The URL before the automatic string should be that of the homepage. However, this did not work with `build_absolute_uri` and similar methods. So the URL is hardcoded in the html-file now.
+
+#### Generate public link 
+Sometimes the public link disappeared after changing something in the edit-personal-data-form. This should be fixed with the additional elif-statement that the share-option only changes if the user turned it on or off by itself.
+
+### Remaining bugs
+
+#### Generate public link (maybe remaining)
+Sometimes the public link disappeared after changing something in the edit-personal-data-form. This should (!) be fixed with the additional elif-statement that the share-option only changes if the user turned it on or off by itself. If the bug still occurs, it often helps to first turn off the share function, save the form, and then turn it back on and save it. If necessary, this step must be repeated more than once.
