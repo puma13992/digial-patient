@@ -548,3 +548,21 @@ In the Deploy tab:
 2. You can then choose to deploy the project manually or automatically, automatic deployment will generate a new application every time you push a change to Github, whereas manual deployment requires you to push the `Deploy Branch` button whenever you want a change made.
 3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should now see the `View` button, click this to open your application.
 4. Be sure to delete settings in Heroku like `PORT` and `DISABLE_COLLECTSTATIC`, set `DEBUG` to `False` in your `settings.py` and add `X_FRAME_OPTIONS` there.
+
+# Credits
+<a href="#top">Back to the top.</a>
+
+- [Code Institute tutorial for deployment](https://docs.google.com/document/d/1CncA1F2JClME2S_K0w4XoV3edMjOl_HrOQoEs3h9LOo/edit#heading=h.hvy9tw74f1o0)
+- The pictures (background image, favicons) were taken from [Pixabay](https://pixabay.com/).
+- The following sources were consulted:
+  - https://www.mattlayman.com/building-saas/user-accounts-django-allauth/
+  - https://www.codesnail.com/django-allauth-email-authentication-tutorial/
+  - https://django-allauth.readthedocs.io/en/latest/account/configuration.html?highlight=remember#configuration
+  - https://www.codesnail.com/django-allauth-email-authentication-tutorial/#7-email-verification
+  - https://gist.github.com/wonderbeyond/1806c7b43d3e642e5ad0aee7052b8e8f
+  - https://code.djangoproject.com/ticket/24459
+
+
+A very big thank you to Rebecca and Gemma from the tutor team who helped me very well in really difficult situations!
+
+A big thank you to my mentor Martina who patiently answered all my questions!
