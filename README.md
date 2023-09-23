@@ -475,3 +475,15 @@ Initial wireframes
 <a href="#top">Back to the top.</a>
 
 All testing results can be found [here](TESTING.md)
+
+# Deployment
+<a href="#top">Back to the top.</a>
+
+1. A new repository was created using 'Code-Instutute-Org/ci-full-template'
+2. A meaningful name was given to my new repository and I selected 'Create Repository'
+3. I then opened the repository on GitHub and clicked the 'Gitpod' button to build the GitPod workspace which would allow me to build and edit the code used to make the <em>Digital Patient</em> website.
+4. Version control was used throughout the project using the following commands in the terminal using Bash
+    - git add . <strong>OR</strong> git add "file name" - to stage the changes and get them ready for being committed to the local repo.
+    - git commit -m "Description of the update" - to save the change and commit the change to the local repo
+    - git push - to push all committed changes to the GitHub
+    - commit --amend - for changing the wording or spelling of the most recent commit
