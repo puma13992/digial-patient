@@ -7,7 +7,8 @@
     * [Automated testing for urls.py](#automated-testing-for-urlspy)
     * [Automated testing for views.py](#automated-testing-for-viewspy)
     * [Not automated tested](#not-automated-tested)
-  * [User story/Manual testing](#user-storymanual-testing)
+  * [User story testing](#user-story-testing)
+  * [Manual testing](#manual-testing)
   * [Bugs](#bugs)
     * [Fixed bugs](#fixed-bugs)
     * [Remaining bugs](#remaining-bugs)
@@ -194,7 +195,7 @@ With "coverage html" a html report was created.
 | `public_profile` View          | Renders a public profile page with data from the database; tested manually.      |
 | `custom_404` View              | Handles 404 error cases by rendering a '404.html' page; tested manually. |
 
-## User story/Manual testing
+## User story testing
 <a href="#top">Back to the top.</a>
 
 | USER STORY                      | Acceptance Criteria                                                                    | Supplemented test criteria                                                                               | Results | Tested                   |
@@ -249,6 +250,27 @@ With "coverage html" a html report was created.
 |                                 | \- My account isn't readable anymore with the public link that was created before.     | for authenticated users only                                                                             | Pass    | Manually                 |
 | Delete account                  | \- Delete my account if I click the button in my profile.                              | for authenticated users only; unauthenticated users receive an error message and are redirected to login | Pass    | Manually & automatically |
 |                                 | \- Can't log in anymore after deleting my account.                                     | for previously registered users                                                                          | Pass    | Manually                 |                                                  |                           |      | Manually    |
+
+## Manual testing
+<a href="#top">Back to the top.</a>
+
+| Test Case                                                                                                              | Description                                                                                                                                       | Result                     |
+| ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| View personal data                                                                                                     | \- for new users; should be blank                                                                                                                 | Pass                       |
+|                                                                                                                        | \- for returning users; should show the entries                                                                                                   | Pass                       |
+|                                                                                                                        | \- for non-authenticated users - should redirect to login                                                                                         | Pass                       |
+| edit_personal_data - form in views.py: if form.is_valid()                                                              | \- for new users; should be blank                                                                                                                 | Pass                       |
+|                                                                                                                        | \- for returning users; should show the entries and get a message after editing & saving data and redirect to view personal data                  | Pass                       |
+| public_profile View                                                                                                    | \- for (non)-authenticated users - should show only a readable version from the users account which is shared                                     | Pass                       |
+| custom_404 View                                                                                                        | \- each url which is not included in urls.py should redirected to a custom 404 html page                                                          | Pass                       |
+| views for overview, personal data, medication/diseases, doctors, contacts                                              | \- for non-authenticated users - should redirect to login                                                                                         | Pass                       |
+| views for add medication/diseases, doctors, contacts (is the same as normal view because the add-form is on this page) | \- for non-authenticated users - should redirect to login                                                                                         | Pass                       |
+| edit view for personal data, medication/diseases, doctors, contacts                                                    | \- for non-authenticated users - should redirect to login                                                                                         | Pass                       |
+|                                                                                                                        | \- for authenticated users - should get a message after editing/saving and redirect to view personal data, medication/diseases, doctors, contacts | Pass                       |
+| delete view for account, medication/diseases, doctors, contacts                                                        | \- for non-authenticated users - should redirect to login                                                                                         | Pass                       |
+| Generate public link for sharing account                                                                               | \- Generate public link for the first time to turn share on                                                                                       | Pass                       |
+|                                                                                                                        | \- Undo share account to turn share off - public link shouldn\`t work anymore                                                                     | Pass                       |
+|                                                                                                                        | \- Let share turn on even if something else changed in the form (e.g. address)                                                                    | Pass (bug should be fixed) |
 
 
 ## Bugs
