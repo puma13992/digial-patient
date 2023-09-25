@@ -107,7 +107,7 @@ The pictures (background image, favicons) were taken from [Pixabay](https://pixa
 ### Database scheme
 The database model reflects the different areas of the website: the personal data and share option through the model "UserProfile", the entries for medications/diseases through the model "MediDisList", the entries for doctors through the model "Doctor" and the entries for contacts through the model "Contact".
 
-![Database scheme](static/media/readme/database-schema.png)
+![Database scheme](static/media/readme/database-diagram.png)
 
 ### Wireframes
 Initial wireframes
@@ -136,9 +136,9 @@ Initial wireframes
 
 ![Edit personal data](static/media/readme/wireframe-edit-personal-data.png)
 
-#### Medications/Diseases
+#### Medication/Diseases
 
-![Medications/Diseases](static/media/readme/wireframes-medications-diseases.png)
+![Medication/Diseases](static/media/readme/wireframes-medications-diseases.png)
 
 #### Doctors
 
@@ -154,7 +154,7 @@ Initial wireframes
 ## Existing features
 
 - __Home screen__
-  - The home screen shows information about the website and explains briefly in a FAQ the most important things.
+  - The home screen shows information about the website and explains briefly in a FAQ-toggle the most important things.
   - The image is intended to symbolize the interface between doctor and patient via the digital medium/the website.
 
   ![Home screen](static/media/readme/home-screen.png)
@@ -162,11 +162,11 @@ Initial wireframes
 - __Navigation Bar__
   - The navigation bar appears on each page.
   - The home screen can be displayed by clicking on the logo on the left side.
-  - The navigation bar for unauthenticated users contains links to the home screen, register and login.
+  - The navigation bar for unauthenticated users contains links to the home screen (via de logo), register and login.
 
   ![Navigation bar unauthenticated users](static/media/readme/navigation-bar-unauthenticated.png)
 
-  - The navigation bar for authenticated users contains links for logout and a drop down menu with links to the five important pages of the website: Overview (profile), personal data, medication/diseases, doctors, contacts.
+  - The navigation bar for authenticated users contains links for the home screen (via de logo), logout and a drop down menu with links to the five important pages of the website: Overview (profile), personal data, medication/diseases, doctors, contacts.
 
   ![Navigation bar authenticated users](static/media/readme/navigation-bar-authenticated.png)
   ![Navigation bar authenticated users dropdown](static/media/readme/navigation-bar-authenticated-drop-down.png)
@@ -188,6 +188,7 @@ Initial wireframes
 - __Register__
   - The page is intended for new users to register. 
   - The users have to enter an e-mail address, a username and the password twice.
+  - They can found some information about the password criteria.
 
   ![Register](static/media/readme/register.png)
   
@@ -206,21 +207,21 @@ Initial wireframes
 
 - __Login__
   - The page is intended for registered users to log in. 
-  - The users have to enter their e-mail address or username and the password.
+  - The users have to enter their username and the password.
   - When logging in, the 'Remember me' function can also be activated.
 
   ![Login](static/media/readme/login.png)
 
 - __Logout__
   - The page is intended for registered users to log out. 
-  - The user is asked if he/she really wants to log out before the final logout. 
-  - Only after confirming by clicking on the button, the user is logged out and redirected to the home screen.
+  - The users are asked if they really want to log out before the final logout. 
+  - Only after confirming by clicking on the button, the users are logged out and redirected to the home screen.
 
   ![Logout](static/media/readme/logout.png)
 
 - __Lost password__
   - The page is intended for registered users to get a new password if they forgot it. 
-  - Users can get a new password by clicking on the 'Forgot password' button. They will then be redirected and will need to enter their registered email address.
+  - Users can get a new password by clicking on the 'Forgot password?' button on the login-page. They will then be redirected and will need to enter their registered email address.
 
   ![Lost password](static/media/readme/password-reset.png)
   ![Lost password email address](static/media/readme/password-reset-sending-mail.png)
@@ -415,6 +416,12 @@ Initial wireframes
 
   ![Delete contact - modal](static/media/readme/delete-contact-cancel-modal.png)
   
+- __404 page__
+  - When users access a link that does not exist, they are automatically redirected to a 404 page. 
+  - There they are informed about the non-existent page and can click the "Go back to the homepage" button to return to the homepage.
+
+  ![404 page](static/media/readme/404.PNG)
+
   ## Future features
 - For a future version, the function to change the password in the account itself could still be added.
 - For a future version, the function to change the email address in the account itself could be added.
@@ -456,18 +463,16 @@ Initial wireframes
   - As the server for Heroku
 - [Cloudinary](https://cloudinary.com/)
   - Was used to host the static files and media
-- [Dj_database_url](https://pypi.org/project/dj-database-url/)
+- [Dj_database_url](https://pypi.org/project/dj-database-url/0.5.0/)
   - To parse the database URL from the environment variables in Heroku
 - [Psycopg2](https://pypi.org/project/psycopg2/)
   - As an adaptor for Python and PostgreSQL databases
-- [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+- [Allauth](https://allauth.org/)
   - For authentication, registration, account management
 - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
   - To style the forms
-- [Django](https://pypi.org/project/Django/3.2.14/) 
+- [Django](https://pypi.org/project/Django/3.2.20/) 
   - As a framework for Python
-- [Allauth](https://django-allauth.readthedocs.io/en/latest/)
-  - For authentication, registration, account management
 - [App.diagram](https://app.diagrams.net/)
   - Was used to create the database schema
 
@@ -561,8 +566,11 @@ In the Deploy tab:
   - https://www.codesnail.com/django-allauth-email-authentication-tutorial/#7-email-verification
   - https://gist.github.com/wonderbeyond/1806c7b43d3e642e5ad0aee7052b8e8f
   - https://code.djangoproject.com/ticket/24459
+  - https://youtu.be/dam0GPOAvVI?si=JE3VmS2pMQhB3l0p
+  - https://youtu.be/wB1qOExDsYY?si=wMeu08aVILVOMtJU
+  - https://youtu.be/ZWippgMUCAU?si=w0XOBQD31NbbLjyX
+  - https://youtu.be/makqrv3SgzU?si=OmRl-ozbBIMnbFFX
 
-
-A very big thank you to Rebecca and Gemma from the tutor team who helped me very well in really difficult situations!
+A very big thank you to Rebecca and Gemma from the student support/tutor team who helped me very well in really difficult situations!
 
 A big thank you to my mentor Martina who patiently answered all my questions!
