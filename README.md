@@ -11,10 +11,10 @@
     * [Returning user goals](#returning-user-goals)
   * [Agile methodology](#agile-methodology)
   * [Design](#design)
-    * [Colours](#colours)
+    * [Colors](#colors)
     * [Typography](#typography)
     * [Media](#media)
-    * [Database schema](#database-schema)
+    * [Database scheme](#database-scheme)
     * [Wireframes](#wireframes)
 * [Features](#features)
   * [Existing features](#existing-features)
@@ -33,9 +33,9 @@
 
 # Introduction: Digital patient
 
-Project Portfolio 4 for Code Institute Full-stack development program. Digital patient is a full stack Django project that runs on Heroku.
+This is the Project Portfolio 4 for Code Institute Full-stack development program. Digital patient is a full-stack Django project that runs on Heroku.
 
-The site allows users to register and log in from the frontend. Once registered and logged in users can edit personal data, edit, add and delete diseases/medications, doctors and contacts.
+The site allows users to register and log in from the frontend. Once registered and logged in users can edit personal data, add, edit and delete diseases/medications, doctors and contacts.
 
 The live website on Heroku can be accessed at the following link: [View my Live Website here](https://digital-patient-807175a8312b.herokuapp.com/)
 
@@ -49,17 +49,17 @@ The live website on Heroku can be accessed at the following link: [View my Live 
 
 ### Site purpose
 
-This program is designed to make it easier for a patient to keep track of their doctors, diseases, medications, as well as (emergency) contacts. In addition, in the case of an emergency, it should be possible for doctors to see a readable version of the patient's profile to see previous diseases, medications, previous doctors and emergency contacts.
+This program is designed to make it easier for a patient to keep track of their doctors, diseases, medications, as well as (emergency) contacts. In addition, in the case of an emergency, it should be possible for doctors to see a readable version of the patient's profile to have a look at previous diseases, medications, previous doctors and emergency contacts.
 
 ### Site goal
 
-To build a website where a kind of digital patient dossier can be easily shared by the patient him/herself for possible emergencies.
+The site goal is to build a website where a kind of digital patient dossier can be easily shared by the patient him/herself for possible emergencies.
 
-A tool like this does not (yet) exist in Germany, and in the case of an emergency with, for example, an unconscious patient, the doctors may not know any previous diseases, medications, general practitioners or emergency contacts, or they may first have to laboriously collect these on individual platforms or (mobile) devices.
+A tool like this does not (yet) exist in Germany, and in the case of emergency with, for example, an unconscious patient, the doctors may not know any previous diseases, medications, general practitioners or emergency contacts, or they may first have to laboriously collect these on individual platforms or (mobile) devices.
 
 ### Audience
 
-For anyone who wants to have all their emergency data on one platform for potential doctors in case of an emergency.
+For anyone who wants to have all their emergency data on one platform for potential doctors in case of emergency.
 
 ## User stories
 
@@ -73,12 +73,12 @@ For anyone who wants to have all their emergency data on one platform for potent
 - As a returning user I can log in to my registered account.
 - As a returning user I can log out of my registered account.
 - As a returning user I can edit my personal data.
-- As a returning user I can edit, add and delete medication/diseases, doctors and contacts in my registered account.
-- As a returning user I can share a readable version of my account with potential doctors in case of an emergency.
+- As a returning user I can add, edit and delete medication/diseases, doctors and contacts in my registered account.
+- As a returning user I can share a readable version of my account with potential doctors in case of emergency.
 
 ## Agile methodology
 
-The principles of agile methodology were utilized during the project. Github issues were used to create User Stories for the project. Each user story (including user acceptance criteria, tasks and story points) can be displayed on the board or in the issues. By assigning user stories to issues and taking advantage of the GitHub Kanban board functionality, the necessary goals and priorities throughout the project could be well defined. In addition, labels were used to further define the priority of each user story in the Kanban board.
+The principles of agile methodology were utilized during the project. Github issues were used to create user stories for the project. Each user story (including user acceptance criteria, tasks and story points) can be displayed on the board or in the issues. By assigning user stories to issues and taking advantage of the GitHub Kanban board functionality, the necessary goals and priorities throughout the project could be well defined. In addition, labels were used to further define the priority of each user story in the Kanban board.
 
 Through the use of the Kanban board in the projects view in Github, the project was divived into a few different sections:
 
@@ -87,7 +87,7 @@ Through the use of the Kanban board in the projects view in Github, the project 
 - In progress
 - Done
 
-Milestones were used to create sprints. There were 3 sprints each dated appropriately. User Stories were completed based on the current sprint in progress. Each sprint was completed on time.
+Milestones were used to create sprints. There were 4 sprints each dated appropriately. User stories were completed based on the current sprint in progress. Each sprint was completed on time.
 
 ## Design
 
@@ -105,7 +105,7 @@ Utilized the Bootstrap 5 native font stack that selects the best font-family for
 The pictures (background image, favicons) were taken from [Pixabay](https://pixabay.com/).
 
 ### Database scheme
-The database model reflects the different areas of the website: the personal data through the model "UserProfile", the entries for medications/diseases through the model "MediDisLis", the entries for doctors through the model "Doctor" and the entries for contacts through the model "Contact".
+The database model reflects the different areas of the website: the personal data and share option through the model "UserProfile", the entries for medications/diseases through the model "MediDisList", the entries for doctors through the model "Doctor" and the entries for contacts through the model "Contact".
 
 ![Database scheme](static/media/readme/database-schema.png)
 
