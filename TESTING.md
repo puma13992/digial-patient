@@ -53,8 +53,13 @@ The testing was done using the Google Chrome browser. Chrome developer tools wer
   - Nest Hub (1024x600px)
   - Nest Hub Max (1280x800px)
 
-- Desktop Results: [should be added]
-- Mobile Results: [should be added]
+- Desktop Results: 
+
+![Desktop results](static/media/readme/lighthouse-desktop.PNG)
+
+- Mobile Results:
+
+![Mobile results](static/media/readme/lighthouse-mobile.PNG)
 
 ## Automated testing
 <a href="#top">Back to the top.</a>
