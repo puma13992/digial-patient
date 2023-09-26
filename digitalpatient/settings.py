@@ -36,7 +36,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-puma13992-digitalpatien-0kc40w9qan0.ws-eu104.gitpod.io',
+ALLOWED_HOSTS = ['8000-puma13992-digitalpatien-0kc40w9qan0.ws-eu105.gitpod.io',
                  'digital-patient-807175a8312b.herokuapp.com', 'localhost']
 
 
