@@ -13,9 +13,10 @@
     * [Fixed bugs](#fixed-bugs)
     * [Remaining bugs](#remaining-bugs)
 
-Testing has taken place continuously throughout the development of the project. The app was tested regularly and deployed early to Heroku to confirm local and remote functioned the same.
+Testing has taken place continuously throughout the development of the project. The app was tested regularly and deployed early and often to Heroku to confirm local and remote functioned the same.
 
 ## Validator testing
+<a href="#top">Back to the top.</a>
 
 - __HTML__
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdigital-patient-807175a8312b.herokuapp.com%2F).
@@ -246,7 +247,7 @@ With "coverage html" a html report was created.
 | Share information               | \- Read the information if I'm sharing my information/profile in case of emergency. | for authenticated users only if share = Yes                                                                     | Pass    | Manually                 |
 |                                 | \- Activate the checkbox to share my account.                                          | for authenticated users only                                                                             | Pass (bug should be fixed)   | Manually                 |
 |                                 | \- Get a public link if I activate sharing.                                            | for authenticated users only                                                                             | Pass (bug should be fixed)   | Manually                 |
-| Undo share information          | \- Deactivate the checkbox to undo sharing my information.                             | for authenticated users only                                                                             | Pass (bug should be fixed)   | Manually                 |
+| Undo share information          | \- Deactivate the checkbox to undo sharing my information.                             | for authenticated users only                                                                             | Pass   | Manually                 |
 |                                 | \- My account isn't readable anymore with the public link that was created before.     | for authenticated users only                                                                             | Pass    | Manually                 |
 | Delete account                  | \- Delete my account if I click the button in my profile.                              | for authenticated users only; unauthenticated users receive an error message and are redirected to login | Pass    | Manually & automatically |
 |                                 | \- Can't log in anymore after deleting my account.                                     | for previously registered users                                                                          | Pass    | Manually                 |                                                  |                           |      | Manually    |
@@ -268,10 +269,12 @@ With "coverage html" a html report was created.
 | edit view for personal data, medication/diseases, doctors, contacts                                                    | \- for non-authenticated users - should redirect to login                                                                                         | Pass                       |
 |                                                                                                                        | \- for authenticated users - should get a message after editing/saving and redirect to view personal data, medication/diseases, doctors, contacts | Pass                       |
 | delete view for account, medication/diseases, doctors, contacts                                                        | \- for non-authenticated users - should redirect to login                                                                                         | Pass                       |
-| Generate public link for sharing account                                                                               | \- Generate public link for the first time to turn share on                                                                                       | Pass                       |
+| Generate public link for sharing account                                                                               | \- Generate public link if the users turn share on                                                                                       | Pass                       |
 |                                                                                                                        | \- Undo share account to turn share off - public link shouldn\`t work anymore                                                                     | Pass                       |
 |                                                                                                                        | \- Let share turn on even if something else changed in the form (e.g. address)                                                                    | Pass (bug should be fixed) |
 
+### JavaScript manual testing
+The JavaScript code was intensively tested in different browsers (Edge, Chrome, Safari, Firefox) and worked without errors.
 
 ## Bugs
 <a href="#top">Back to the top.</a>
@@ -279,35 +282,45 @@ With "coverage html" a html report was created.
 ### Fixed bugs
 
 #### Wrong user modell
-During the first phase of programming the user model, errors were found regarding the user configuration. This was fixed by the following steps:
+During the first phase of programming the user model, errors were found regarding the user configuration. This was fixed by the following steps from Student support:
 1. Delete the db.sqlite3 file. If this file contains important data, you might want to settle a backup for those.
 2. In ElephantSQL, in the Details dashboard, click on the ‘Reset’ button
 3. Delete all the migrations files inside the migration folder of all the Django applications (EXCEPT for __init__.py file, this is important).
-4. Make migrations (use sqlite3 database for migrations) with:
+4. Make migrations (use sqlite3 database in settings.py for migrations to create a new db.sqlite3 file) with:
   - `python3 manage.py makemigrations --dry-run`
   - `python3 manage.py makemigrations`
   - `python3 manage.py migrate --plan`
   - `python3 manage.py migrate`
-5. Comment out sqlite3-database locally again and set it back to ElephantSQL; repeat migration steps.
+5. Comment out sqlite3-database on `settings.py` again and set it back to ElephantSQL; repeat migration steps.
 6. From there, just need to create a new superuser with:
   - `python3 manage.py createsuperuser`
 
 #### Replace 2nd login
-At the beginning a new user should be created automatically for the share-account function at share = Yes. I reached some limits and decided to generate 'only' a public link, which works similar - just without login.
+At the beginning of the project, a new user should be created automatically for the share-account function if share = Yes. I reached some limits and decided to generate 'only' a public link, which works similar - just without login.
 
 #### No redirection in edit/delete options
-There was no redirection for not authenticated users in the edit/delete options. This was added later.
+In the beginning, there was no redirection for not authenticated users in the edit/delete options. This was added later.
 
 #### Can't login with email
-Despite the settings in `settings.py` it was not possible to log in with his registered email address. The settings were therefore reset to login with username only.
+Despite the settings in `settings.py` it was not possible to log in with a registered email address. The settings were therefore reset to login with username only.
 
 #### Can't build URL
-A link should be generated automatically for the public link. The URL before the automatic string should be that of the homepage. However, this did not work with `build_absolute_uri` and similar methods. So the URL is hardcoded in the html-file now.
+A link should be generated automatically for the public link. The URL before the automatic string should be that of the homepage. However, this did not work with `build_absolute_uri` and similar methods in `views.py`. Later, I found a working method for the html-file with `{{ request.scheme }}://{{ request.get_host }}/public_profile/{{ public_link }}/`.
 
 #### Generate public link 
 Sometimes the public link disappeared after changing something in the edit-personal-data-form. This should be fixed with the additional elif-statement that the share-option only changes if the user turned it on or off by itself.
 
-### Remaining bugs
 
-#### Generate public link (maybe remaining)
-Sometimes the public link disappeared after changing something in the edit-personal-data-form. This should (!) be fixed with the additional elif-statement that the share-option only changes if the user turned it on or off by itself. If the bug still occurs, it often helps to first turn off the share function, save the form, and then turn it back on and save it. If necessary, this step must be repeated more than once.
+### (Possible) Remaining bugs
+
+#### Generate public link (possible remaining)
+Sometimes the public link disappeared after changing something in the edit-personal-data-form. This should (!) be fixed with the additional elif-statement that the share-option only changes if the user turned it on or off by itself. If the bug still occurs, it often helps to first turn off the share function, save the form, and then turn it back on and save it. If necessary, this step must be repeated more than once. If I tested the website, the bug doesn't appear anymore.
+
+#### Chrome warning public link (possible remaining)
+Sometimes a phishing warning appeared in Chrome when the public link was called. It seems that it only happens if data entries (especially the public link) were taken from the IDE and deployed to heroku with the hardcoded link. 
+
+The console shows this warning:
+
+![Warning](static/media/readme/bug-phishing.png)
+
+This should be fixed. If I tested the website, the warning doesn't appear anymore.
