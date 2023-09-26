@@ -570,6 +570,8 @@ In the Deploy tab:
   - https://youtu.be/wB1qOExDsYY?si=wMeu08aVILVOMtJU
   - https://youtu.be/ZWippgMUCAU?si=w0XOBQD31NbbLjyX
   - https://youtu.be/makqrv3SgzU?si=OmRl-ozbBIMnbFFX
+  - https://groups.google.com/g/wagtail/c/SP1l652stDo
+  - https://docs.djangoproject.com/en/4.2/ref/request-response/
 
 A very big thank you to Rebecca and Gemma from the student support/tutor team who helped me very well in really difficult situations!
 
