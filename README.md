@@ -40,7 +40,7 @@ The site allows users to register and log in from the frontend. Once registered 
 The live website on Heroku can be accessed at the following link: [View my Live Website here](https://digital-patient-807175a8312b.herokuapp.com/)
 
 
-![Digital patient](static/media/readme/mockup.JPG)
+![Digital patient](static/media/readme/mockup.png)
 
 # User Experience
 <a href="#top">Back to the top.</a>
@@ -95,7 +95,7 @@ Milestones were used to create sprints. There were 4 sprints each dated appropri
 
 I decided to use calming colors, primarily shades of blue. Blue is the typical business color, as it is sober, businesslike, calming and trustworthy, and it maintains its character even in different gradations. It best connects to the goal of the website. To keep the contrast between the background and the font, a basis black tone and a lightly grey is included. All colors also connect to Bootstrap's existing colors (primary, secondary and dark).
 
-![Colors](static/media/readme/color-scheme-digital-patient.JPG)
+![Colors](static/media/readme/color-scheme-digital-patient.png)
 
 ### Typography
 
@@ -203,7 +203,7 @@ Initial wireframes
 
   - If the link is invalid or expired, an error message appears.
 
-  ![Confirm email link expired](static/media/readme/confirm-email-link-expired.PNG)
+  ![Confirm email link expired](static/media/readme/confirm-email-link-expired.png)
 
 - __Login__
   - The page is intended for registered users to log in. 
@@ -258,18 +258,18 @@ Initial wireframes
   - Only if the password is entered correctly, the account will be deleted.
   - If the input is incorrect, the user will be redirected back to the password input.
 
-  ![Invalid password](static/media/readme/delete-account-invalid-password.PNG)
+  ![Invalid password](static/media/readme/delete-account-invalid-password.png)
   
   - Users can also cancel the account deletion by clicking the cancel button.
   - If the password is correct, the users will be redirected to the home screen and a message appears that the account deletion was successful.
   - Users will no longer be able to log in with their old credentials.
 
-  ![Account deletion succesful](static/media/readme/delete-account-confirm.PNG)
+  ![Account deletion succesful](static/media/readme/delete-account-confirm.png)
 
   - When clicking on the "Cancel" button, a modal appears and asks the users if they really want to discard their changes. 
   - If the users choose "No", they will stay on the delete page, if they choose "Yes", they will be redirected back to the overview.
 
-  ![Delete account - modal](static/media/readme/delete-account-cancel-modal.PNG)
+  ![Delete account - modal](static/media/readme/delete-account-cancel-modal.png)
 
 - __Personal data__
   - Users can see their personal data entries on this page.
@@ -420,7 +420,7 @@ Initial wireframes
   - When users access a link that does not exist, they are automatically redirected to a 404 page. 
   - There they are informed about the non-existent page and can click the "Go back to the homepage" button to return to the homepage.
 
-  ![404 page](static/media/readme/404.PNG)
+  ![404 page](static/media/readme/404.png)
 
   ## Future features
 - For a future version, the function to change the password in the account itself could still be added.

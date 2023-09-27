@@ -30,7 +30,7 @@ Testing has taken place continuously throughout the development of the project. 
 - __Python__
   - The python-code was run through the Code Institute Python Linter and showed no errors.
 
-  ![PEP8 Validator](static/media/readme/pep8-validator.PNG)
+  ![PEP8 Validator](static/media/readme/pep8-validator.png)
 
 Google Lighthouse was used to test performance, best practices, accessibility and SEO on desktop and mobile devices.
 
@@ -66,11 +66,11 @@ The testing was done using the Google Chrome browser. Chrome developer tools wer
 
 All test files are located in the patientapp/tests folder in the project. Automated tests were run for almost all views, forms in views, forms, urls and models. The tests were executed with the command "python3 manage.py test" or for individual test files with the specific command "python3 manage.py test patientapp.tests.test_views". In addition, the coverage tool was installed with the command "pip3 install coverage". With "coverage run --source=patientapp manage.py test" the tool was executed and with "coverage report" the report results were created. For the automated tests, the sqlite3 database present in the settings.py was used.
 
-![Coverage report](static/media/readme/coverage-report.PNG)
+![Coverage report](static/media/readme/coverage-report.png)
 
 With "coverage html" a html report was created.
 
-![HTML report](static/media/readme/coverage-report-html.PNG)
+![HTML report](static/media/readme/coverage-report-html.png)
 
 
 ### Automated testing for forms in views.py
@@ -314,6 +314,9 @@ A link should be generated automatically for the public link. The URL before the
 
 #### Generate public link 
 Sometimes the public link disappeared after changing something in the edit-personal-data-form. This should be fixed with the additional elif-statement that the share-option only changes if the user turned it on or off by itself.
+
+#### Capitalized file extensions of png/jpg-files
+The file extensions of some png and jpg files were automatically capitalised by the snipping tool. The files were replaced.
 
 
 ### (Possible) Remaining bugs
