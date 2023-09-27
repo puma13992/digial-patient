@@ -11,7 +11,7 @@
   * [Manual testing](#manual-testing)
   * [Bugs](#bugs)
     * [Fixed bugs](#fixed-bugs)
-    * [Remaining bugs](#remaining-bugs)
+    * [(Possible) Remaining bugs](#possible-remaining-bugs)
 
 Testing has taken place continuously throughout the development of the project. The app was tested regularly and deployed early and often to Heroku to confirm local and remote functioned the same.
 
@@ -55,11 +55,11 @@ The testing was done using the Google Chrome browser. Chrome developer tools wer
 
 - Desktop Results: 
 
-![Desktop results](static/media/readme/lighthouse-desktop.PNG)
+![Desktop results](static/media/readme/lighthouse-desktop.png)
 
 - Mobile Results:
 
-![Mobile results](static/media/readme/lighthouse-mobile.PNG)
+![Mobile results](static/media/readme/lighthouse-mobile.png)
 
 ## Automated testing
 <a href="#top">Back to the top.</a>
