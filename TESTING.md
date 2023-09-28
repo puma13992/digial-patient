@@ -28,9 +28,14 @@ Testing has taken place continuously throughout the development of the project. 
   - No errors were found when passing through the official [JS validator](https://jshint.com/).
 
 - __Python__
-  - The python-code was run through the Code Institute Python Linter and showed no errors.
+  - All self written python-code was run through the Code Institute Python Linter and showed no errors.
 
   ![PEP8 Validator](static/media/readme/pep8-validator.png)
+
+  - Only settings.py showed some errors. There are 5 lines to long but these are AUTH_PASSWORD_VALIDATORS and the STATICFILES_STORAGE which can not be shortend.
+
+  ![PEP8 Validator settings.py](static/media/readme/pep8-settings.png)
+  
 
 Google Lighthouse was used to test performance, best practices, accessibility and SEO on desktop and mobile devices.
 
