@@ -493,6 +493,9 @@ All testing results can be found [here](TESTING.md)
     - git push - to push all committed changes to the GitHub
     - commit --amend - for changing the wording or spelling of the most recent commit
 
+<b>Note:</b> One commit is accidentally duplicated ("Change style for custom 404 page; set debug to false"). This was seen too late to correct without possibly affecting the entire history. The note is therefore noted here.
+
+
 ## Forking
 
 1. Go to [the project repository](https://github.com/puma13992/digital-patient)
